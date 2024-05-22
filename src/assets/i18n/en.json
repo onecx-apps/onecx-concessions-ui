@@ -2,8 +2,8 @@
   "TRAVELCONCESSION_DETAILS": {
     "HELP_ARTICLE_ID": "Help Article",
     "BREADCRUMB": "Details",
-    "HEADER": "TravelConcession Details",
-    "SUB_HEADER": "Display of TravelConcession Details",
+    "HEADER": "Travel Concession Details",
+    "SUB_HEADER": "Display of Travel Concession Details",
     "ERROR_MESSAGES": {
       "DETAILS_LOADING_FAILED": "Loading details failed."
     },
@@ -13,8 +13,8 @@
     }
   },
   "TRAVELCONCESSION_SEARCH": {
-    "HEADER": "TravelConcession Search",
-    "SUB_HEADER": "Searching and displaying of TravelConcessions",
+    "HEADER": "Travel Concession Search",
+    "SUB_HEADER": "Searching and displaying of Travel Concessions",
     "HELP_ARTICLE_ID": "Help Article",
     "EMPTY_RESULTS": "No results.",
     "BREADCRUMB": "Search",
@@ -50,8 +50,8 @@
   "TRAVELOFFERING_DETAILS": {
     "HELP_ARTICLE_ID": "Help Article",
     "BREADCRUMB": "Details",
-    "HEADER": "TravelOffering Details",
-    "SUB_HEADER": "Display of TravelOffering Details",
+    "HEADER": "Travel Offering Details",
+    "SUB_HEADER": "Display of Travel Offering Details",
     "ERROR_MESSAGES": {
       "DETAILS_LOADING_FAILED": "Loading details failed."
     },
@@ -61,8 +61,8 @@
     }
   },
   "TRAVELOFFERING_SEARCH": {
-    "HEADER": "TravelOffering Search",
-    "SUB_HEADER": "Searching and displaying of TravelOfferings",
+    "HEADER": "Travel Offering Search",
+    "SUB_HEADER": "Searching and displaying of Travel Offerings",
     "HELP_ARTICLE_ID": "Help Article",
     "EMPTY_RESULTS": "No results.",
     "BREADCRUMB": "Search",
