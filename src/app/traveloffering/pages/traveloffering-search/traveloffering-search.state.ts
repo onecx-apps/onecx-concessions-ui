@@ -21,7 +21,6 @@ export interface TravelofferingSearchState {
   searchConfigEnabled: boolean;
   changeMode: 'NEW' | 'EDIT';
   displayDetailDialog: boolean;
-  displayDeleteDialog: boolean;
   dataItem: TravelOffering | undefined;
 }
 
@@ -35,6 +34,5 @@ export interface TravelofferingSearchConfigState {
   searchConfigEnabled: boolean;
   changeMode: 'NEW' | 'EDIT';
   displayDetailDialog: boolean;
-  displayDeleteDialog: boolean;
   dataItem: TravelOffering | undefined;
 }

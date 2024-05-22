@@ -14,7 +14,6 @@ export const initialState: TravelofferingSearchState = {
   chartVisible: false,
   searchConfigEnabled: false,
   changeMode: 'NEW',
-  displayDeleteDialog: false,
   displayDetailDialog: false,
   dataItem: undefined,
 };

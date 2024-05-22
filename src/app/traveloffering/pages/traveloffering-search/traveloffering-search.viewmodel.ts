@@ -20,6 +20,5 @@ export interface TravelofferingSearchViewModel {
   searchConfigEnabled: boolean;
   changeMode: 'NEW' | 'EDIT';
   displayDetailDialog: boolean;
-  displayDeleteDialog: boolean;
   dataItem: TravelOffering | undefined;
 }
