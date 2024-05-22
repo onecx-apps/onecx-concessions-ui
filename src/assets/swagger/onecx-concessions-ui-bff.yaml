@@ -207,6 +207,23 @@ paths:
       responses:
         204:
           description: Travel offering deleted
+  /travelofferings/all:
+    get:
+      tags:
+        - travelOfferingsInternal
+      description: Return all travel offerings
+      operationId: getAllTravelOfferings
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TravelOffering"
+        "404":
+          description: Not found          
   /travelofferings/search:
     post:
       tags:
@@ -801,6 +818,8 @@ components:
     TravelConcessionSearchCriteria:
       type: object
       properties:
+        offeringName:
+          type: string
         principalRole:
           type: string
         customerRelationToPrincipal:

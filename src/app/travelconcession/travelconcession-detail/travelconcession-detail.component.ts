@@ -44,8 +44,8 @@ export class TravelConcessionDetailComponent implements OnChanges, OnInit {
   ) {}
 
   ngOnInit() {
-    this.offeringApi.searchTravelOfferings({}).subscribe((result) => {
-      if (result.stream) this.availableOfferings = result.stream;
+    this.offeringApi.getAllTravelOfferings().subscribe((result) => {
+      if (result) this.availableOfferings = result;
     });
   }
 

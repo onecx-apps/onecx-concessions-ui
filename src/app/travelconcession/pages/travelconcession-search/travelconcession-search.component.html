@@ -16,6 +16,21 @@
   >
     <form [formGroup]="travelconcessionSearchFormGroup">
       <div class="grid mt-0 p-fluid">
+        <div class="col-12 md:col-6">
+          <span class="p-float-label">
+            <input
+              id="offeringName"
+              pInputText
+              type="text"
+              formControlName="offeringName"
+              class="p-inputtext p-component"
+              [ngModel]="vm.searchCriteria.offeringName"
+            />
+            <label for="offeringName">{{
+              'TRAVELCONCESSION_SEARCH.CRITERIA.OFFERING' | translate
+            }}</label>
+          </span>
+        </div>
         <div class="col-12 md:col-4">
           <span class="p-float-label">
             <input

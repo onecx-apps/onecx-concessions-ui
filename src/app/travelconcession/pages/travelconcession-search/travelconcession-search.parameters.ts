@@ -3,6 +3,7 @@ import { ZodTypeAny, z } from 'zod';
 export const travelconcessionSearchCriteriasSchema = z.object({
   principalRole: z.string().optional(),
   customerRelationToPrincipal: z.string().optional(),
+  offeringName: z.string().optional(),
   //TODO: Move to docs
   // TODO: it always starts with z.string()
   // if you need transform () -> but this is optional
