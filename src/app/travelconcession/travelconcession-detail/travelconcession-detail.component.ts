@@ -84,24 +84,24 @@ export class TravelConcessionDetailComponent implements OnChanges, OnInit {
           next: () => {
             this.searchEmitter.emit();
             this.msgService.success({
-              summaryKey: 'TRAVEL_CONCESSION_CREATION.CREATION_SUCCESS',
+              summaryKey: 'TRAVELCONCESSION_CREATION.CREATION_SUCCESS',
             });
             this.displayDetailDialog = false;
           },
           error: (err: { error: { key: string } }) => {
             err.error.key && err.error.key === 'PERSIST_ENTITY_FAILED'
               ? this.msgService.error({
-                  summaryKey: 'TRAVEL_CONCESSION_CREATION.CREATION_FAILED',
-                  detailKey: 'TRAVEL_CONCESSION_CREATION.UNIQUE_CONSTRAINT',
+                  summaryKey: 'TRAVELCONCESSION_CREATION.CREATION_FAILED',
+                  detailKey: 'TRAVELCONCESSION_CREATION.UNIQUE_CONSTRAINT',
                 })
               : this.msgService.error({
-                  summaryKey: 'TRAVEL_CONCESSION_CREATION.CREATION_FAILED',
+                  summaryKey: 'TRAVELCONCESSION_CREATION.CREATION_FAILED',
                 });
           },
         });
     } else {
       this.msgService.error({
-        summaryKey: 'TRAVEL_CONCESSION_CREATION.VALIDATION_ERROR',
+        summaryKey: 'TRAVELCONCESSION_CREATION.VALIDATION_ERROR',
       });
     }
   }
@@ -119,20 +119,20 @@ export class TravelConcessionDetailComponent implements OnChanges, OnInit {
           next: () => {
             this.searchEmitter.emit();
             this.msgService.success({
-              summaryKey: 'TRAVEL_CONCESSION_DETAIL.UPDATE_SUCCESSFUL',
+              summaryKey: 'TRAVELCONCESSION_DETAIL.UPDATE_SUCCESSFUL',
             });
             this.displayDetailDialog = false;
           },
           error: () => {
             this.msgService.error({
-              summaryKey: 'TRAVEL_CONCESSION_DETAIL.UPDATE_ERROR',
+              summaryKey: 'TRAVELCONCESSION_DETAIL.UPDATE_ERROR',
             });
             // console.error(err)
           },
         });
     } else {
       this.msgService.error({
-        summaryKey: 'TRAVEL_CONCESSION_DETAIL.VALIDATION_ERROR',
+        summaryKey: 'TRAVELCONCESSION_DETAIL.VALIDATION_ERROR',
       });
     }
   }

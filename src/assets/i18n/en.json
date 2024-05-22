@@ -96,10 +96,30 @@
     }
   },
   "TRAVELOFFERING_CREATION": {
-    "HEADER": "New Travel Offering"
+    "HEADER": "New Travel Offering",
+    "CREATION_SUCCESS": "Creation successful",
+    "CREATION_FAILED": "Creation failed",
+    "UNIQUE_CONSTRAINT": "Duplicated unique key",
+    "VALIDATION_ERROR": "Validation Error"
   },
   "TRAVELOFFERING_DETAIL": {
-    "HEADER": "Travel Offering"
+    "HEADER": "Travel Offering",
+    "UPDATE_SUCCESSFUL": "Update successful",
+    "UPDATE_ERROR": "Update failed",
+    "VALIDATION_ERROR": "Validation Error"
+  },
+  "TRAVELCONCESSION_CREATION": {
+    "HEADER": "New Travel Concession",
+    "CREATION_SUCCESS": "Creation succesful",
+    "CREATION_FAILED": "Creation failed",
+    "UNIQUE_CONSTRAINT": "Duplicated unique key",
+    "VALIDATION_ERROR": "Validation Error"
+  },
+  "TRAVELCONCESSION_DETAIL": {
+    "HEADER": "Travel Concession",
+    "UPDATE_SUCCESSFUL": "Update successful",
+    "UPDATE_ERROR": "Update failed",
+    "VALIDATION_ERROR": "Validation Error"
   },
   "GENERAL": {
     "CREATE": "Create",
