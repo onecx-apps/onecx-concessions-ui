@@ -1,0 +1,42 @@
+app:
+  name: ui
+  image:
+    repository: onecx-apps/onecx-concessions-ui
+  routing:
+    enabled: true
+    path: /mfe/onecxconcessionsUi/
+  operator:
+    microfrontend:
+      enabled: true
+      spec:
+        exposedModule: ./OnecxconcessionsUiModule
+        description: OneCX OnecxconcessionsUi Module
+        note: OneCX OnecxconcessionsUi UI module auto import via MF operator
+    permission:
+      enabled: true
+      spec:
+        permissions:
+          TRAVELOFFERING:
+            CREATE: Create traveloffering
+            EDIT: Edit traveloffering
+            DELETE: Delete traveloffering
+            SAVE: Update and save traveloffering
+            IMPORT: Import traveloffering
+            EXPORT: Export traveloffering
+            VIEW: View mode for traveloffering
+            SEARCH: Seaarch traveloffering
+          TRAVELCONCESSION:
+            CREATE: Create travelconcession
+            EDIT: Edit travelconcession
+            DELETE: Delete travelconcession
+            SAVE: Update and save travelconcession
+            IMPORT: Import travelconcession
+            EXPORT: Export travelconcession
+            VIEW: View mode for travelconcession
+            SEARCH: Seaarch travelconcession
+    keycloak:
+      client:
+        enabled: true
+        spec:
+          kcConfig:
+            clientId: onecx-concessions-ui

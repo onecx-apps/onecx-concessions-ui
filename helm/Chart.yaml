@@ -1,0 +1,17 @@
+apiVersion: v2
+name: onecx-concessions-ui
+version: 0.0.0
+description: onecx-concessions UI
+home: https://github.com/onecx-apps/onecx-concessions-ui
+keywords:
+  - onecx-concessions-ui
+sources:
+  - https://github.com/onecx-apps/onecx-concessions-ui
+maintainers:
+  - name: Tkit Developer
+    email: tkit_dev@1000kit.org
+dependencies:
+  - name: helm-angular-app
+    version: ^0
+    repository: oci://ghcr.io/onecx/charts
+    alias: app

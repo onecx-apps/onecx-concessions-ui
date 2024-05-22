@@ -1,0 +1,9 @@
+PERMISSION NAME;PERMISSION_KEY;basic-role;onecx-admin;
+Basic permission;ONECX_concessionS_UI_SEARCH#BASIC;x;x;
+View search results;ONECX_concessionS_UI_SEARCH#VIEW;x;x;
+View search results;TRAVELOFFERING#SEARCH;;x;
+Edit search results;TRAVELOFFERING#EDIT;x;x;
+Edit search results;TRAVELOFFERING#VIEW;x;x;
+View search results;TRAVELCONCESSION#SEARCH;;x;
+Edit search results;TRAVELCONCESSION#EDIT;x;x;
+Edit search results;TRAVELCONCESSION#VIEW;x;x;

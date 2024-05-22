@@ -1,0 +1,15 @@
+<ocx-portal-page
+  permission="TRAVELOFFERING#VIEW"
+  [helpArticleId]="'TRAVELOFFERING_DETAILS.HELP_ARTICLE_ID' | translate"
+  *ngrxLet="viewModel$; let vm"
+>
+  <ocx-page-header
+    [header]="'TRAVELOFFERING_DETAILS.HEADER' | translate"
+    [subheader]="'TRAVELOFFERING_DETAILS.SUB_HEADER' | translate"
+    [objectDetails]="headerLabels"
+    [actions]="headerActions"
+    [disableDefaultActions]="true"
+    [manualBreadcrumbs]="true"
+  >
+  </ocx-page-header>
+</ocx-portal-page>

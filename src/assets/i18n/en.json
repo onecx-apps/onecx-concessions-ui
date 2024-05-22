@@ -1,0 +1,147 @@
+{
+  "TRAVELCONCESSION_DETAILS": {
+    "HELP_ARTICLE_ID": "Help Article",
+    "BREADCRUMB": "Details",
+    "HEADER": "Travel Concession Details",
+    "SUB_HEADER": "Display of Travel Concession Details",
+    "ERROR_MESSAGES": {
+      "DETAILS_LOADING_FAILED": "Loading details failed."
+    },
+    "GENERAL": {
+      "BACK": "Back",
+      "MORE": "More"
+    }
+  },
+  "TRAVELCONCESSION_SEARCH": {
+    "HEADER": "Travel Concession Search",
+    "SUB_HEADER": "Searching and displaying of Travel Concessions",
+    "HELP_ARTICLE_ID": "Help Article",
+    "EMPTY_RESULTS": "No results.",
+    "BREADCRUMB": "Search",
+    "DIAGRAM": {
+      "SUM": "Total"
+    },
+    "HEADER_ACTIONS": {
+      "EXPORT_ALL": "Export all",
+      "SHOW_CHART": "Show chart",
+      "HIDE_CHART": "Hide chart",
+      "CREATE_SEARCH_CONFIG": "Create search configuration",
+      "UPDATE_SEARCH_CONFIG": "Update search configuration",
+      "DIALOG_CONFIRM": "Confirm",
+      "DIALOG_CANCEL": "Cancel"
+    },
+    "ERROR_MESSAGES": {
+      "SEARCH_RESULTS_LOADING_FAILED": "Loading search results failed.",
+      "SEARCH_CONFIG_CREATION_FAILED": "Create search configuration failed.",
+      "SEARCH_CONFIG_UPDATE_FAILED": "Update search configuration failed.",
+      "SEARCH_CONFIGS_LOADING_FAILED": "Loading search configurations failed."
+    },
+    "PREDEFINED_GROUP": {
+      "DEFAULT": "Default",
+      "EXTENDED": "Extended",
+      "FULL": "Full"
+    },
+    "CRITERIA": {
+      "PRINCIPAL_ROLE": "Principal Role",
+      "CUSTOMER_RELATION_TO_PRINCIPAL": "Customer Relation to Principal",
+      "OFFERING": "Offering Name"
+    }
+  },
+  "TRAVELOFFERING_DETAILS": {
+    "HELP_ARTICLE_ID": "Help Article",
+    "BREADCRUMB": "Details",
+    "HEADER": "Travel Offering Details",
+    "SUB_HEADER": "Display of Travel Offering Details",
+    "ERROR_MESSAGES": {
+      "DETAILS_LOADING_FAILED": "Loading details failed."
+    },
+    "GENERAL": {
+      "BACK": "Back",
+      "MORE": "More"
+    }
+  },
+  "TRAVELOFFERING_SEARCH": {
+    "HEADER": "Travel Offering Search",
+    "SUB_HEADER": "Searching and displaying of Travel Offerings",
+    "HELP_ARTICLE_ID": "Help Article",
+    "EMPTY_RESULTS": "No results.",
+    "BREADCRUMB": "Search",
+    "DIAGRAM": {
+      "SUM": "Total"
+    },
+    "HEADER_ACTIONS": {
+      "EXPORT_ALL": "Export all",
+      "SHOW_CHART": "Show chart",
+      "HIDE_CHART": "Hide chart",
+      "CREATE_SEARCH_CONFIG": "Create search configuration",
+      "UPDATE_SEARCH_CONFIG": "Update search configuration",
+      "DIALOG_CONFIRM": "Confirm",
+      "DIALOG_CANCEL": "Cancel"
+    },
+    "ERROR_MESSAGES": {
+      "SEARCH_RESULTS_LOADING_FAILED": "Loading search results failed.",
+      "SEARCH_CONFIG_CREATION_FAILED": "Create search configuration failed.",
+      "SEARCH_CONFIG_UPDATE_FAILED": "Update search configuration failed.",
+      "SEARCH_CONFIGS_LOADING_FAILED": "Loading search configurations failed."
+    },
+    "PREDEFINED_GROUP": {
+      "DEFAULT": "Default",
+      "EXTENDED": "Extended",
+      "FULL": "Full"
+    },
+    "CRITERIA": {
+      "NAME": "Name",
+      "ALLOWED_WAGON_CLASS": "Allowed Wagon class",
+      "REMOTE_ID": "Remote ID",
+      "STATE": "State"
+    }
+  },
+  "TRAVELOFFERING_CREATION": {
+    "HEADER": "New Travel Offering",
+    "CREATION_SUCCESS": "Creation successful",
+    "CREATION_FAILED": "Creation failed",
+    "UNIQUE_CONSTRAINT": "Duplicated unique key",
+    "VALIDATION_ERROR": "Validation Error"
+  },
+  "TRAVELOFFERING_DETAIL": {
+    "HEADER": "Travel Offering",
+    "UPDATE_SUCCESSFUL": "Update successful",
+    "UPDATE_ERROR": "Update failed",
+    "VALIDATION_ERROR": "Validation Error"
+  },
+  "TRAVELCONCESSION_CREATION": {
+    "HEADER": "New Travel Concession",
+    "CREATION_SUCCESS": "Creation succesful",
+    "CREATION_FAILED": "Creation failed",
+    "UNIQUE_CONSTRAINT": "Duplicated unique key",
+    "VALIDATION_ERROR": "Validation Error"
+  },
+  "TRAVELCONCESSION_DETAIL": {
+    "HEADER": "Travel Concession",
+    "UPDATE_SUCCESSFUL": "Update successful",
+    "UPDATE_ERROR": "Update failed",
+    "VALIDATION_ERROR": "Validation Error"
+  },
+  "GENERAL": {
+    "CREATE": "Create",
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "DELETE": {
+      "HEADER": "Confirm Deletion",
+      "CONTENT": "Please confirm the deletion.",
+      "CONFIRM": "Delete"
+    },
+    "TRAVEL_OFFERING": {
+      "NAME": "Name",
+      "ALLOWED_WAGON_CLASS": "Allowed Wagon class",
+      "REMOTE_ID": "Remote ID",
+      "STATE": "State"
+    },
+    "TRAVEL_CONCESSION": {
+      "OFFERING": "Offering",
+      "STATE": "State",
+      "PRINCIPAL_ROLE": "Principal Role",
+      "CUSTOMER_RELATION_TO_PRINCIPAL": "Customer Relation to Principal"
+    }
+  }
+}

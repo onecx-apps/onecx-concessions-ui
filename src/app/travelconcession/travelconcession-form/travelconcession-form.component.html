@@ -1,0 +1,80 @@
+<form [formGroup]="formGroup">
+  <ng-template pTemplate="header">
+    <span>{{ 'TRAVELCONCESSION_CREATION.HEADER' | translate }}</span>
+  </ng-template>
+  <div class="flex flex-wrap flex-column gap-4 justify-content-between mt-2">
+    <div [title]="'GENERAL.TRAVEL_CONCESSION.OFFERING' | translate">
+      <span class="p-float-label" controlErrorAnchor>
+        <p-autoComplete
+          class="w-full"
+          id="travelconcession_detail_form_offering"
+          formControlName="offering"
+          [suggestions]="filteredOfferings"
+          (completeMethod)="filterOffering($event)"
+          [dropdown]="true"
+          field="name"
+          [style]="{ width: '100%' }"
+        />
+        <label
+          class="ocx-required-label"
+          for="travelconcession_detail_form_offering"
+        >
+          {{ 'GENERAL.TRAVEL_CONCESSION.OFFERING' | translate }}</label
+        >
+      </span>
+    </div>
+    <div [title]="'GENERAL.TRAVEL_CONCESSION.STATE' | translate">
+      <span class="p-float-label">
+        <p-dropdown
+          [options]="dropdownOptions"
+          formControlName="state"
+          placeholder="State"
+          [style]="{ width: '100%' }"
+        ></p-dropdown>
+        <label class="" for="travelconcession_detail_form_state">{{
+          'GENERAL.TRAVEL_CONCESSION.STATE' | translate
+        }}</label>
+      </span>
+    </div>
+    <div [title]="'GENERAL.TRAVEL_CONCESSION.PRINCIPAL_ROLE' | translate">
+      <span class="p-float-label" controlErrorAnchor>
+        <input
+          pInputText
+          type="text"
+          id="travelconcession_detail_form_principalRole"
+          class="w-full pt-3 pb-2"
+          formControlName="principalRole"
+        />
+        <label
+          class="ocx-required-label"
+          for="travelconcession_detail_form_principalRole"
+        >
+          {{ 'GENERAL.TRAVEL_CONCESSION.PRINCIPAL_ROLE' | translate }}</label
+        >
+      </span>
+    </div>
+    <div
+      [title]="
+        'GENERAL.TRAVEL_CONCESSION.CUSTOMER_RELATION_TO_PRINCIPAL' | translate
+      "
+    >
+      <span class="p-float-label">
+        <input
+          pInputText
+          type="text"
+          id="travelconcession_detail_form_customerRelationToPrincipal"
+          class="w-full pt-3 pb-2"
+          formControlName="customerRelationToPrincipal"
+        />
+        <label
+          class=""
+          for="travelconcession_detail_form_customerRelationToPrincipal"
+          >{{
+            'GENERAL.TRAVEL_CONCESSION.CUSTOMER_RELATION_TO_PRINCIPAL'
+              | translate
+          }}</label
+        >
+      </span>
+    </div>
+  </div>
+</form>
