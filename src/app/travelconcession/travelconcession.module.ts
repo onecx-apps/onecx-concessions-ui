@@ -18,20 +18,20 @@ import {
   addInitializeModuleGuard,
   createTranslateLoader,
 } from '@onecx/portal-integration-angular';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CalendarModule } from 'primeng/calendar';
 import { SharedModule } from '../shared/shared.module';
 import { TravelconcessionDetailsComponent } from './pages/travelconcession-details/travelconcession-details.component';
 import { TravelconcessionDetailsEffects } from './pages/travelconcession-details/travelconcession-details.effects';
 import { TravelconcessionSearchComponent } from './pages/travelconcession-search/travelconcession-search.component';
 import { TravelconcessionSearchEffects } from './pages/travelconcession-search/travelconcession-search.effects';
+import { TravelConcessionDetailComponent } from './travelconcession-detail/travelconcession-detail.component';
+import { TravelConcessionFormComponent } from './travelconcession-form/travelconcession-form.component';
 import { travelconcessionFeature } from './travelconcession.reducers';
 import { routes } from './travelconcession.routes';
-import { TravelConcessionFormComponent } from './travelconcession-form/travelconcession-form.component';
-import { TravelConcessionDetailComponent } from './travelconcession-detail/travelconcession-detail.component';
-import { AutoCompleteModule } from 'primeng/autocomplete';
 @NgModule({
   declarations: [
-    TravelconcessionDetailsComponent,    
+    TravelconcessionDetailsComponent,
     TravelconcessionSearchComponent,
     TravelConcessionFormComponent,
     TravelConcessionDetailComponent,

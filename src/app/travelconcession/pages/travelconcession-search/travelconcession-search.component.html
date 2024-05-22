@@ -56,10 +56,13 @@
         <div>
           <ocx-interactive-data-view
             (viewItem)="details($event)"
-            (viewItem)="details($event)"
+            (deleteItem)="delete($event)"
+            (editItem)="edit($event)"
             [data]="vm.results"
             [columns]="vm.columns"
             viewPermission="TRAVELCONCESSION#VIEW"
+            editPermission="TRAVELOFFERING#VIEW"
+            deletePermission="TRAVELOFFERING#VIEW"
             [listGridPaginator]="false"
             [emptyResultsMessage]="
               'TRAVELCONCESSION_SEARCH.EMPTY_RESULTS' | translate

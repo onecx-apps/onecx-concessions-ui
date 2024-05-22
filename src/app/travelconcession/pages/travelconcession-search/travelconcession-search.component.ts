@@ -20,6 +20,8 @@ import {
 } from './travelconcession-search.parameters';
 import { selectTravelconcessionSearchViewModel } from './travelconcession-search.selectors';
 import { TravelconcessionSearchViewModel } from './travelconcession-search.viewmodel';
+import { SimpleTextComponent } from 'src/app/shared/components/simple-text.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-travelconcession-search',
@@ -109,7 +111,8 @@ export class TravelconcessionSearchComponent implements OnInit {
     private readonly formBuilder: FormBuilder,
     @Inject(LOCALE_ID) public readonly locale: string,
     private readonly exportDataService: ExportDataService,
-    private portalDialogService: PortalDialogService
+    private portalDialogService: PortalDialogService,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit() {
@@ -149,6 +152,42 @@ export class TravelconcessionSearchComponent implements OnInit {
   details({ id }: RowListGridData) {
     this.store.dispatch(
       TravelconcessionSearchActions.detailsButtonClicked({ id })
+    );
+  }
+
+  delete({ id }: RowListGridData) {
+    this.portalDialogService
+      .openDialog<unknown>(
+        'GENERAL.DELETE.HEADER',
+        {
+          type: SimpleTextComponent,
+          inputs: {
+            text: this.translateService.instant('GENERAL.DELETE.CONTENT'),
+          },
+        },
+        {
+          key: 'GENERAL.DELETE.CONFIRM',
+          icon: PrimeIcons.CHECK,
+        },
+        {
+          key: 'GENERAL.CANCEL',
+          icon: PrimeIcons.TIMES,
+        }
+      )
+      .subscribe((stateOnClose) => {
+        if (stateOnClose.button == 'primary') {
+          this.store.dispatch(
+            TravelconcessionSearchActions.deletionConfirmed({
+              id: id as string,
+            })
+          );
+        }
+      });
+  }
+
+  edit({ id }: RowListGridData) {
+    this.store.dispatch(
+      TravelconcessionSearchActions.editButtonClicked({ id })
     );
   }
 

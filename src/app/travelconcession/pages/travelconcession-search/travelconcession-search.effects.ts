@@ -249,6 +249,22 @@ export class TravelconcessionSearchEffects {
     );
   });
 
+  deletionConfirmed$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(TravelconcessionSearchActions.deletionConfirmed),
+      concatLatestFrom(() => this.store.select(selectSearchCriteria)),
+      switchMap(([action, searchCriteria]) =>
+        this.travelconcessionService.deleteTravelConcession(action.id).pipe(
+          map(() =>
+            TravelconcessionSearchActions.searchButtonClicked({
+              searchCriteria,
+            })
+          )
+        )
+      )
+    );
+  });
+
   searchByUrl$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(routerNavigatedAction),

@@ -26,6 +26,9 @@ export const TravelconcessionSearchActions = createActionGroup({
     'Data Item set': props<{
       dataItem: TravelConcession;
     }>(),
+    'Deletion confirmed': props<{
+      id: string;
+    }>(),
     'travelconcession search results received': props<{
       results: TravelConcession[];
       totalNumberOfResults: number;
