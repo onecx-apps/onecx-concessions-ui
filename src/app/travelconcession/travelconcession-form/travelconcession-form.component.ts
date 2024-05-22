@@ -53,7 +53,7 @@ export class TravelConcessionFormComponent implements OnChanges {
     });
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     if (this.dataItem) {
       this.formGroup.patchValue({
         ...this.dataItem,
