@@ -1,7 +1,7 @@
 app:
   name: ui
   image:
-    repository: onecx/onecx-concessions-ui
+    repository: onecx-apps/onecx-concessions-ui
   routing:
     enabled: true
     path: /mfe/onecxconcessionsUi/
