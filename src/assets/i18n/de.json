@@ -36,7 +36,6 @@
       "SEARCH_CONFIG_UPDATE_FAILED": "Suchkonfiguration konnte nicht aktualisiert werden.",
       "SEARCH_CONFIGS_LOADING_FAILED": "Suchkonfigurationen konnten nicht geladen werden."
     },
-    "INPUT_FIELDS": "ACTION S4: ADD TRANSLATION for your input fields",
     "PREDEFINED_GROUP": {
       "DEFAULT": "Standard",
       "EXTENDED": "Erweitert",
@@ -44,7 +43,8 @@
     },
     "CRITERIA": {
       "PRINCIPAL_ROLE": "Hauptberechtigter-Rolle",
-      "CUSTOMER_RELATION_TO_PRINCIPAL": "Beziehung zu HB"
+      "CUSTOMER_RELATION_TO_PRINCIPAL": "Beziehung zu HB",
+      "OFFERING": "Angebots-Name"
     }
   },
   "TRAVELOFFERING_DETAILS": {
@@ -96,9 +96,41 @@
       "STATE": "Status"
     }
   },
+  "TRAVELOFFERING_CREATION": {
+    "HEADER": "Neues Reiseangebot",
+    "CREATION_SUCCESS": "Erstellung erfolgreich",
+    "CREATION_FAILED": "Erstellung fehlgeschlagen",
+    "UNIQUE_CONSTRAINT": "Doppelter eindeutiger Schlüssel",
+    "VALIDATION_ERROR": "Validierungs-Fehler"
+  },
+  "TRAVELOFFERING_DETAIL": {
+    "HEADER": "Reiseangebot",
+    "UPDATE_SUCCESSFUL": "Aktualisierung erfolgreich",
+    "UPDATE_ERROR": "Aktualisierung fehlgeschlagen",
+    "VALIDATION_ERROR": "Validierungs-Fehler"
+  },
+  "TRAVELCONCESSION_CREATION": {
+    "HEADER": "Reisevergünstigung",
+    "CREATION_SUCCESS": "Erstellung erfolgreich",
+    "CREATION_FAILED": "Erstellung fehlgeschlagen",
+    "UNIQUE_CONSTRAINT": "Doppelter eindeutiger Schlüssel",
+    "VALIDATION_ERROR": "Validierungs-Fehler"
+  },
+  "TRAVELCONCESSION_DETAIL": {
+    "HEADER": "Reisevergünstigung",
+    "UPDATE_SUCCESSFUL": "Aktualisierung erfolgreich",
+    "UPDATE_ERROR": "Aktualisierung fehlgeschlagen",
+    "VALIDATION_ERROR": "Validierungs-Fehler"
+  },
   "GENERAL": {
+    "CREATE": "Erstellen",
     "SAVE": "Speichern",
     "CANCEL": "Abbrechen",
+    "DELETE": {
+      "HEADER": "Löschen Bestätigen",
+      "CONTENT": "Bitte bestätigen Sie das Löschen.",
+      "CONFIRM": "Löschen"
+    },
     "TRAVEL_OFFERING": {
       "NAME": "Name",
       "ALLOWED_WAGON_CLASS": "Erlaubte Wagenklasse",
