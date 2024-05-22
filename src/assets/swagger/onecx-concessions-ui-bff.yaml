@@ -1,114 +1,14 @@
 ---
 openapi: 3.0.3
 info:
-  title: onecx-concessions bff
+  title: onecx-consessions internal service
   version: 1.0.0
 servers:
-  - url: "http://onecx-concessions-bff:8080"
+  - url: "http://onecx-consessions-svc:8080"
 tags:
   - name: travelConcessionInternal
   - name: travelOfferingsInternal
-
 paths:
-  /travelconcession/{id}:
-    get:
-      x-onecx:
-        permissions:
-          travelconcession:
-            - read
-      operationId: getTravelconcessionById
-      tags:
-        - Travelconcession
-      parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "integer"
-            format: "int64"
-      responses:
-        200:
-          description: "OK"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GetTravelconcessionByIdResponse"
-        "400":
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemDetailResponse"
-        404:
-          description: "Not Found"
-        "500":
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemDetailResponse"
-
-  /travelconcession/search:
-    post:
-      operationId: searchTravelconcessions
-      tags:
-        - Travelconcession
-      description: This operation performs a search based on provided search criteria. Search for travelconcession results.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/TravelConcessionSearchCriteria"
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/TravelConcessionPageResult"
-        "400":
-          description: Bad request
-        "500":
-          description: Something went wrong
-
-  /traveloffering/{id}:
-    get:
-      x-onecx:
-        permissions:
-          traveloffering:
-            - read
-      operationId: getTravelofferingById
-      tags:
-        - Traveloffering
-      parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "integer"
-            format: "int64"
-      responses:
-        200:
-          description: "OK"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GetTravelofferingByIdResponse"
-        "400":
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemDetailResponse"
-        404:
-          description: "Not Found"
-        "500":
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemDetailResponse"
-
   /travelofferings:
     post:
       tags:
@@ -223,7 +123,7 @@ paths:
                 items:
                   $ref: "#/components/schemas/TravelOffering"
         "404":
-          description: Not found          
+          description: Not found
   /travelofferings/search:
     post:
       tags:
@@ -243,6 +143,123 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/TravelOfferingPageResult"
+  /travelconcessions:
+    post:
+      tags:
+        - travelConcessionsInternal
+      description: Create new travel concession
+      operationId: createNewTravelConcession
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateTravelConcession"
+      responses:
+        201:
+          description: New travel concession created
+          headers:
+            Location:
+              required: true
+              schema:
+                type: string
+                format: url
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TravelConcession"
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProblemDetailResponse"
+  /travelconcessions/{id}:
+    get:
+      tags:
+        - travelConcessionsInternal
+      description: Return travel concession by ID
+      operationId: getTravelConcessionById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TravelConcession"
+        "404":
+          description: Not found
+    put:
+      tags:
+        - travelConcessionsInternal
+      description: Update travel concession by ID
+      operationId: updateTravelConcession
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateTravelConcession"
+      responses:
+        204:
+          description: Travel concession updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TravelConcession"
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProblemDetailResponse"
+        404:
+          description: Travel offering not found
+    delete:
+      tags:
+        - travelConcessionsInternal
+      description: Delete travel concession by ID
+      operationId: deleteTravelConcession
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Travel concession deleted
+  /travelconcessions/search:
+    post:
+      tags:
+        - travelConcessionsInternal
+      description: Search for travel concessions
+      operationId: searchTravelConcession
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TravelConcessionSearchCriteria"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TravelConcessionPageResult"
   /searchConfig/{configId}:
     put:
       x-onecx:
@@ -426,146 +443,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ProblemDetailResponse"
-  /travelconcessions:
-    post:
-      tags:
-        - travelConcessionsInternal
-      description: Create new travel concession
-      operationId: createNewTravelConcession
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/CreateTravelConcession"
-      responses:
-        201:
-          description: New travel concession created
-          headers:
-            Location:
-              required: true
-              schema:
-                type: string
-                format: url
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/TravelConcession"
-        400:
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemDetailResponse"
-  /travelconcessions/{id}:
-    get:
-      tags:
-        - travelConcessionsInternal
-      description: Return travel concession by ID
-      operationId: getTravelConcessionById
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/TravelConcession"
-        "404":
-          description: Not found
-    put:
-      tags:
-        - travelConcessionsInternal
-      description: Update travel concession by ID
-      operationId: updateTravelConcession
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/UpdateTravelConcession"
-      responses:
-        204:
-          description: Travel concession updated
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/TravelConcession"
-        400:
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ProblemDetailResponse"
-        404:
-          description: Travel offering not found
-    delete:
-      tags:
-        - travelConcessionsInternal
-      description: Delete travel concession by ID
-      operationId: deleteTravelConcession
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        204:
-          description: Travel concession deleted
-  /travelconcessions/search:
-    post:
-      tags:
-        - travelConcessionsInternal
-      description: Search for travel concessions
-      operationId: searchTravelConcession
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/TravelConcessionSearchCriteria"
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/TravelConcessionPageResult"
+                $ref: "#/components/schemas/ProblemDetailResponse"                
 components:
   schemas:
-    GetTravelconcessionByIdResponse:
-      type: object
-      required:
-        - "result"
-      properties:
-        result:
-          $ref: "#/components/schemas/TravelConcession"
-    GetTravelofferingByIdResponse:
-      type: object
-      required:
-        - "result"
-      properties:
-        result:
-          $ref: "#/components/schemas/TravelOffering"
     TravelOfferingSearchCriteria:
       type: object
       properties:
         state:
           type: string
-          description: state of the offering
         name:
           type: string
         allowedWagonClass:
@@ -602,227 +487,14 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/TravelOffering"
-    TravelOffering:
-      type: object
-      properties:
-        modificationCount:
-          format: int32
-          type: integer
-        creationDate:
-          $ref: "#/components/schemas/OffsetDateTime"
-        creationUser:
-          type: string
-        modificationDate:
-          $ref: "#/components/schemas/OffsetDateTime"
-        modificationUser:
-          type: string
-        id:
-          type: string
-        name:
-          type: string
-        allowedWagonClass:
-          type: string
-        requiredPayment:
-          type: number
-        state:
-          type: string
-        remoteId:
-          type: string
-    OffsetDateTime:
-      format: date-time
-      type: string
-      example: 2022-03-10T12:15:50-04:00
-    ProblemDetailResponse:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        detail:
-          type: string
-        params:
-          type: array
-          items:
-            $ref: "#/components/schemas/ProblemDetailParam"
-        invalidParams:
-          type: array
-          items:
-            $ref: "#/components/schemas/ProblemDetailInvalidParam"
-    ProblemDetailParam:
-      type: object
-      properties:
-        key:
-          type: string
-        value:
-          type: string
-    ProblemDetailInvalidParam:
-      type: object
-      properties:
-        name:
-          type: string
-        message:
-          type: string
-    CreateTravelOffering:
-      required:
-        - itemId
-      type: object
-      properties:
-        name:
-          type: string
-        allowedWagonClass:
-          type: string
-        requiredPayment:
-          type: number
-        remoteId:
-          type: string
-    UpdateTravelOffering:
-      required:
-        - itemId
-        - modificationCount
-      type: object
-      properties:
-        modificationCount:
-          format: int32
-          type: integer
-        name:
-          type: string
-        allowedWagonClass:
-          type: string
-        requiredPayment:
-          type: number
-        remoteId:
-          type: string
-    SearchConfigInfo:
-      required:
-        - id
-        - name
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-
-    SearchConfig:
-      allOf:
-        - $ref: "#/components/schemas/SearchConfigInfo"
-      type: object
-      required:
-        - name
-        - modificationCount
-        - fieldListVersion
-        - isReadonly
-        - isAdvanced
-        - columns
-        - values
-      properties:
-        id:
-          type: string
-        page:
-          type: string
-        name:
-          type: string
-        modificationCount:
-          type: integer
-        fieldListVersion:
-          type: integer
-          description: Version increment of the fields in the UI which you should use when you are making incompatible changes to those fields.
-        isReadonly:
-          type: boolean
-          description: Defines whether this config can be changed in the UI
-        isAdvanced:
-          type: boolean
-          description: Indicates whether the advanced mode should be displayed
-        columns:
-          type: array
-          items:
-            type: string
-        values:
-          type: object
-          additionalProperties:
-            type: string
-
-    GetSearchConfigInfosResponse:
-      allOf:
-        - $ref: "#/components/schemas/SearchConfigInfoList"
-
-    GetSearchConfigResponse:
-      type: object
-      required:
-        - config
-      properties:
-        config:
-          $ref: "#/components/schemas/SearchConfig"
-
-    CreateSearchConfigRequest:
-      type: object
-      required:
-        - "page"
-        - "name"
-        - "fieldListVersion"
-        - "isReadonly"
-        - "isAdvanced"
-        - "columns"
-        - "values"
-      properties:
-        page:
-          type: string
-        name:
-          type: string
-        fieldListVersion:
-          type: integer
-          description: Version increment of the fields in the UI which you should use when you are making incompatible changes to those fields.
-        isReadonly:
-          type: boolean
-          description: Defines whether this config can be changed in the UI
-        isAdvanced:
-          type: boolean
-          description: Indicates whether the advanced mode should be displayed
-        columns:
-          type: array
-          items:
-            type: string
-        values:
-          type: object
-          additionalProperties:
-            type: string
-
-    CreateSearchConfigResponse:
-      allOf:
-        - $ref: "#/components/schemas/SearchConfigInfoList"
-
-    UpdateSearchConfigRequest:
-      type: object
-      required:
-        - searchConfig
-      properties:
-        searchConfig:
-          $ref: "#/components/schemas/SearchConfig"
-
-    UpdateSearchConfigResponse:
-      allOf:
-        - $ref: "#/components/schemas/SearchConfigInfoList"
-
-    SearchConfigInfoList:
-      type: object
-      required:
-        - totalElements
-        - configs
-      properties:
-        totalElements:
-          format: int64
-          description: The total elements in the resource.
-          type: integer
-        configs:
-          type: array
-          items:
-            $ref: "#/components/schemas/SearchConfigInfo"
     TravelConcessionSearchCriteria:
       type: object
       properties:
-        offeringName:
-          type: string
         principalRole:
           type: string
         customerRelationToPrincipal:
+          type: string
+        offeringName:
           type: string
         pageNumber:
           format: int32
@@ -854,6 +526,32 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/TravelConcession"
+    TravelOffering:
+      type: object
+      properties:
+        modificationCount:
+          format: int32
+          type: integer
+        creationDate:
+          $ref: "#/components/schemas/OffsetDateTime"
+        creationUser:
+          type: string
+        modificationDate:
+          $ref: "#/components/schemas/OffsetDateTime"
+        modificationUser:
+          type: string
+        id:
+          type: string
+        state:
+          type: string
+        name:
+          type: string
+        allowedWagonClass:
+          type: string
+        requiredPayment:
+          type: number
+        remoteId:
+          type: string
     TravelConcession:
       type: object
       properties:
@@ -985,6 +683,70 @@ components:
         state:
           type: string
           enum: [REQUESTED, DECLINED, CANCELLED, ACTIVE, AWAITING_PAYMENT]
+    OffsetDateTime:
+      format: date-time
+      type: string
+      example: 2022-03-10T12:15:50-04:00
+    ProblemDetailResponse:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        detail:
+          type: string
+        params:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProblemDetailParam"
+        invalidParams:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProblemDetailInvalidParam"
+    ProblemDetailParam:
+      type: object
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+    ProblemDetailInvalidParam:
+      type: object
+      properties:
+        name:
+          type: string
+        message:
+          type: string
+    CreateTravelOffering:
+      required:
+        - itemId
+      type: object
+      properties:
+        name:
+          type: string
+        state:
+          type: string
+        allowedWagonClass:
+          type: string
+        requiredPayment:
+          type: number
+        remoteId:
+          type: string
+    UpdateTravelOffering:
+      required:
+        - itemId
+        - modificationCount
+      type: object
+      properties:
+        name:
+          type: string
+        state:
+          type: string
+        allowedWagonClass:
+          type: string
+        requiredPayment:
+          type: number
+        remoteId:
+          type: string
     CreateTravelConcession:
       required:
         - itemId
@@ -992,9 +754,9 @@ components:
       properties:
         state:
           type: string
-        customerRelationToPrincipal:
-          type: string
         principalRole:
+          type: string
+        customerRelationToPrincipal:
           type: string
         offeringId:
           type: string
@@ -1004,14 +766,132 @@ components:
         - modificationCount
       type: object
       properties:
-        modificationCount:
-          format: int32
-          type: integer
         state:
-          type: string
-        customerRelationToPrincipal:
           type: string
         principalRole:
           type: string
+        customerRelationToPrincipal:
+          type: string
         offeringId:
           type: string
+    SearchConfigInfo:
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+
+    SearchConfig:
+      allOf:
+        - $ref: "#/components/schemas/SearchConfigInfo"
+      type: object
+      required:
+        - name
+        - modificationCount
+        - fieldListVersion
+        - isReadonly
+        - isAdvanced
+        - columns
+        - values
+      properties:
+        id:
+          type: string
+        page:
+          type: string
+        name:
+          type: string
+        modificationCount:
+          type: integer
+        fieldListVersion:
+          type: integer
+          description: Version increment of the fields in the UI which you should use when you are making incompatible changes to those fields.
+        isReadonly:
+          type: boolean
+          description: Defines whether this config can be changed in the UI
+        isAdvanced:
+          type: boolean
+          description: Indicates whether the advanced mode should be displayed
+        columns:
+          type: array
+          items:
+            type: string
+        values:
+          type: object
+          additionalProperties:
+            type: string
+    GetSearchConfigInfosResponse:
+      allOf:
+        - $ref: "#/components/schemas/SearchConfigInfoList"
+    GetSearchConfigResponse:
+      type: object
+      required:
+        - config
+      properties:
+        config:
+          $ref: "#/components/schemas/SearchConfig"
+    CreateSearchConfigRequest:
+      type: object
+      required:
+        - "page"
+        - "name"
+        - "fieldListVersion"
+        - "isReadonly"
+        - "isAdvanced"
+        - "columns"
+        - "values"
+      properties:
+        page:
+          type: string
+        name:
+          type: string
+        fieldListVersion:
+          type: integer
+          description: Version increment of the fields in the UI which you should use when you are making incompatible changes to those fields.
+        isReadonly:
+          type: boolean
+          description: Defines whether this config can be changed in the UI
+        isAdvanced:
+          type: boolean
+          description: Indicates whether the advanced mode should be displayed
+        columns:
+          type: array
+          items:
+            type: string
+        values:
+          type: object
+          additionalProperties:
+            type: string
+
+    CreateSearchConfigResponse:
+      allOf:
+        - $ref: "#/components/schemas/SearchConfigInfoList"
+
+    UpdateSearchConfigRequest:
+      type: object
+      required:
+        - searchConfig
+      properties:
+        searchConfig:
+          $ref: "#/components/schemas/SearchConfig"
+
+    UpdateSearchConfigResponse:
+      allOf:
+        - $ref: "#/components/schemas/SearchConfigInfoList"
+
+    SearchConfigInfoList:
+      type: object
+      required:
+        - totalElements
+        - configs
+      properties:
+        totalElements:
+          format: int64
+          description: The total elements in the resource.
+          type: integer
+        configs:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchConfigInfo"

@@ -4,8 +4,6 @@ export * from './createTravelConcession';
 export * from './createTravelOffering';
 export * from './getSearchConfigInfosResponse';
 export * from './getSearchConfigResponse';
-export * from './getTravelconcessionByIdResponse';
-export * from './getTravelofferingByIdResponse';
 export * from './problemDetailInvalidParam';
 export * from './problemDetailParam';
 export * from './problemDetailResponse';

@@ -5,8 +5,6 @@ api/api.ts
 api/searchConfig.service.ts
 api/travelConcessionsInternal.service.ts
 api/travelOfferingsInternal.service.ts
-api/travelconcession.service.ts
-api/traveloffering.service.ts
 configuration.ts
 encoder.ts
 git_push.sh
@@ -17,8 +15,6 @@ model/createTravelConcession.ts
 model/createTravelOffering.ts
 model/getSearchConfigInfosResponse.ts
 model/getSearchConfigResponse.ts
-model/getTravelconcessionByIdResponse.ts
-model/getTravelofferingByIdResponse.ts
 model/models.ts
 model/problemDetailInvalidParam.ts
 model/problemDetailParam.ts
