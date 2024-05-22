@@ -26,12 +26,15 @@ import { TravelconcessionSearchComponent } from './pages/travelconcession-search
 import { TravelconcessionSearchEffects } from './pages/travelconcession-search/travelconcession-search.effects';
 import { travelconcessionFeature } from './travelconcession.reducers';
 import { routes } from './travelconcession.routes';
+import { TravelConcessionFormComponent } from './travelconcession-form/travelconcession-form.component';
+import { TravelConcessionDetailComponent } from './travelconcession-detail/travelconcession-detail.component';
 
 @NgModule({
   declarations: [
-    TravelconcessionDetailsComponent,
-    TravelconcessionDetailsComponent,
+    TravelconcessionDetailsComponent,    
     TravelconcessionSearchComponent,
+    TravelConcessionFormComponent,
+    TravelConcessionDetailComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

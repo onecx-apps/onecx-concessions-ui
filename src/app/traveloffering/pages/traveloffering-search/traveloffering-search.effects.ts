@@ -23,10 +23,7 @@ import { SearchConfigBffService } from 'src/app/shared/generated/api/searchConfi
 import { CreateSearchConfigRequest } from 'src/app/shared/generated/model/createSearchConfigRequest';
 import { TravelofferingSearchActions } from './traveloffering-search.actions';
 import { TravelofferingSearchComponent } from './traveloffering-search.component';
-import {
-  TravelofferingSearchCriteria,
-  travelofferingSearchCriteriasSchema,
-} from './traveloffering-search.parameters';
+import { travelofferingSearchCriteriasSchema } from './traveloffering-search.parameters';
 import {
   selectSearchConfigViewState,
   selectSearchCriteria,

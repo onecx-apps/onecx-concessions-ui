@@ -88,5 +88,12 @@
         ></ocx-group-by-count-diagram>
       </div>
     </ocx-content>
+    <app-travelconcession-detail
+      [displayDetailDialog]="vm.displayDetailDialog"
+      (displayDetailDialogChange)="onDetailClose()"
+      [travelOfferingItem]="vm.dataItem"
+      [changeMode]="vm.changeMode"
+      (searchEmitter)="search(travelconcessionSearchFormGroup)"
+    ></app-travelconcession-detail>
   </ocx-content-container>
 </ocx-portal-page>

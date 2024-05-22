@@ -36,6 +36,12 @@ export class TravelconcessionSearchComponent implements OnInit {
     map((vm) => {
       const actions: Action[] = [
         {
+          labelKey: 'GENERAL.CREATE',
+          icon: PrimeIcons.PLUS,
+          show: 'always',
+          actionCallback: () => this.onCreate(),
+        },
+        {
           labelKey: 'TRAVELCONCESSION_SEARCH.HEADER_ACTIONS.EXPORT_ALL',
           icon: PrimeIcons.DOWNLOAD,
           titleKey: 'TRAVELCONCESSION_SEARCH.HEADER_ACTIONS.EXPORT_ALL',
@@ -204,5 +210,13 @@ export class TravelconcessionSearchComponent implements OnInit {
     this.store.dispatch(
       TravelconcessionSearchActions.updateSearchConfigClicked()
     );
+  }
+
+  public onCreate() {
+    this.store.dispatch(TravelconcessionSearchActions.createButtonClicked());
+  }
+
+  public onDetailClose() {
+    this.store.dispatch(TravelconcessionSearchActions.detailDialogClose());
   }
 }

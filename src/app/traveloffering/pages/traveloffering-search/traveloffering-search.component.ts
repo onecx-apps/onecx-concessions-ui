@@ -38,7 +38,7 @@ export class TravelofferingSearchComponent implements OnInit {
     map((vm) => {
       const actions: Action[] = [
         {
-          label: 'create',
+          labelKey: 'GENERAL.CREATE',
           icon: PrimeIcons.PLUS,
           show: 'always',
           actionCallback: () => this.onCreate(),

@@ -13,6 +13,9 @@ export const initialState: TravelconcessionSearchState = {
   viewMode: 'basic',
   chartVisible: false,
   searchConfigEnabled: false,
+  changeMode: 'NEW',
+  displayDetailDialog: false,
+  dataItem: undefined,
 };
 
 export const travelconcessionSearchReducer = createReducer(
@@ -147,6 +150,36 @@ export const travelconcessionSearchReducer = createReducer(
     ): TravelconcessionSearchState => ({
       ...state,
       viewMode: viewMode,
+    })
+  ),
+  on(
+    TravelconcessionSearchActions.createButtonClicked,
+    (state: TravelconcessionSearchState): TravelconcessionSearchState => ({
+      ...state,
+      changeMode: 'NEW',
+      displayDetailDialog: true,
+      dataItem: {},
+    })
+  ),
+  on(
+    TravelconcessionSearchActions.detailDialogClose,
+    (state: TravelconcessionSearchState): TravelconcessionSearchState => ({
+      ...state,
+      changeMode: 'NEW',
+      displayDetailDialog: false,
+      dataItem: undefined,
+    })
+  ),
+  on(
+    TravelconcessionSearchActions.dataItemSet,
+    (
+      state: TravelconcessionSearchState,
+      { dataItem }
+    ): TravelconcessionSearchState => ({
+      ...state,
+      changeMode: 'EDIT',
+      displayDetailDialog: true,
+      dataItem: dataItem,
     })
   )
 );

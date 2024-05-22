@@ -233,6 +233,22 @@ export class TravelconcessionSearchEffects {
     { dispatch: false }
   );
 
+  editButtonClicked$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(TravelconcessionSearchActions.editButtonClicked),
+      concatLatestFrom(() =>
+        this.store.select(travelconcessionSearchSelectors.selectResults)
+      ),
+      map(([action, results]) => {
+        const dataItem = results.filter((item) => item.id == action.id)[0];
+        console.table(dataItem);
+        return TravelconcessionSearchActions.dataItemSet({
+          dataItem,
+        });
+      })
+    );
+  });
+
   searchByUrl$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(routerNavigatedAction),

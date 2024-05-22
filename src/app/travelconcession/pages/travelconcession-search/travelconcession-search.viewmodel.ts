@@ -1,4 +1,8 @@
-import { SearchConfig, SearchConfigInfo } from 'src/app/shared/generated';
+import {
+  SearchConfig,
+  SearchConfigInfo,
+  TravelConcession,
+} from 'src/app/shared/generated';
 import { TravelconcessionSearchCriteria } from './travelconcession-search.parameters';
 import {
   RowListGridData,
@@ -15,4 +19,7 @@ export interface TravelconcessionSearchViewModel {
   viewMode: 'basic' | 'advanced';
   chartVisible: boolean;
   searchConfigEnabled: boolean;
+  changeMode: 'NEW' | 'EDIT';
+  displayDetailDialog: boolean;
+  dataItem: TravelConcession | undefined;
 }

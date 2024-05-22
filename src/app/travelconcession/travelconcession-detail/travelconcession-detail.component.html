@@ -22,10 +22,10 @@
     '400px': '100vw',
       }"
 >
-  <app-traveloffering-form 
+  <app-travelconcession-form 
   [changeMode]="changeMode"
   [dataItem]="travelOfferingItem"
-  ></app-traveloffering-form>
+  ></app-travelconcession-form>
 
   <ng-template pTemplate="footer">
     <div class="flex flex-wrap justify-content-end gap-2 mb-1">
@@ -40,7 +40,7 @@
         [label]="'GENERAL.SAVE' | translate"
         (onClick)="onSave()"
         icon="pi pi-save"
-        [disabled]="!travelOfferingFormComponent.formGroup.valid"
+        [disabled]="!dataFormComponent.formGroup.valid"
       ></p-button>
     </div>
   </ng-template>

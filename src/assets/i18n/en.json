@@ -102,6 +102,7 @@
     "HEADER": "Travel Offering"
   },
   "GENERAL": {
+    "CREATE": "Create",
     "SAVE": "Save",
     "CANCEL": "Cancel",
     "DELETE": {

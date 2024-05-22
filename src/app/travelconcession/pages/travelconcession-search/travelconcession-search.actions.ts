@@ -18,7 +18,14 @@ export const TravelconcessionSearchActions = createActionGroup({
       searchCriteria: TravelconcessionSearchCriteria;
     }>(),
     'Reset button clicked': emptyProps(),
-
+    'Create button clicked': emptyProps(),
+    'Detail Dialog close': emptyProps(),
+    'Edit button clicked': props<{
+      id: number | string;
+    }>(),
+    'Data Item set': props<{
+      dataItem: TravelConcession;
+    }>(),
     'travelconcession search results received': props<{
       results: TravelConcession[];
       totalNumberOfResults: number;
