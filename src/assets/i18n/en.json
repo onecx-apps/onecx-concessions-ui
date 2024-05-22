@@ -1,0 +1,125 @@
+{
+  "TRAVELCONCESSION_DETAILS": {
+    "HELP_ARTICLE_ID": "Help Article",
+    "BREADCRUMB": "Details",
+    "HEADER": "TravelConcession Details",
+    "SUB_HEADER": "Display of TravelConcession Details",
+    "ERROR_MESSAGES": {
+      "DETAILS_LOADING_FAILED": "Loading details failed."
+    },
+    "GENERAL": {
+      "BACK": "Back",
+      "MORE": "More"
+    }
+  },
+  "TRAVELCONCESSION_SEARCH": {
+    "HEADER": "TravelConcession Search",
+    "SUB_HEADER": "Searching and displaying of TravelConcessions",
+    "HELP_ARTICLE_ID": "Help Article",
+    "EMPTY_RESULTS": "No results.",
+    "BREADCRUMB": "Search",
+    "DIAGRAM": {
+      "SUM": "Total"
+    },
+    "HEADER_ACTIONS": {
+      "EXPORT_ALL": "Export all",
+      "SHOW_CHART": "Show chart",
+      "HIDE_CHART": "Hide chart",
+      "CREATE_SEARCH_CONFIG": "Create search configuration",
+      "UPDATE_SEARCH_CONFIG": "Update search configuration",
+      "DIALOG_CONFIRM": "Confirm",
+      "DIALOG_CANCEL": "Cancel"
+    },
+    "ERROR_MESSAGES": {
+      "SEARCH_RESULTS_LOADING_FAILED": "Loading search results failed.",
+      "SEARCH_CONFIG_CREATION_FAILED": "Create search configuration failed.",
+      "SEARCH_CONFIG_UPDATE_FAILED": "Update search configuration failed.",
+      "SEARCH_CONFIGS_LOADING_FAILED": "Loading search configurations failed."
+    },
+    "PREDEFINED_GROUP": {
+      "DEFAULT": "Default",
+      "EXTENDED": "Extended",
+      "FULL": "Full"
+    },
+    "CRITERIA": {
+      "PRINCIPAL_ROLE": "Principal Role",
+      "CUSTOMER_RELATION_TO_PRINCIPAL": "Customer Relation to Principal"
+    }
+  },
+  "TRAVELOFFERING_DETAILS": {
+    "HELP_ARTICLE_ID": "Help Article",
+    "BREADCRUMB": "Details",
+    "HEADER": "TravelOffering Details",
+    "SUB_HEADER": "Display of TravelOffering Details",
+    "ERROR_MESSAGES": {
+      "DETAILS_LOADING_FAILED": "Loading details failed."
+    },
+    "GENERAL": {
+      "BACK": "Back",
+      "MORE": "More"
+    }
+  },
+  "TRAVELOFFERING_SEARCH": {
+    "HEADER": "TravelOffering Search",
+    "SUB_HEADER": "Searching and displaying of TravelOfferings",
+    "HELP_ARTICLE_ID": "Help Article",
+    "EMPTY_RESULTS": "No results.",
+    "BREADCRUMB": "Search",
+    "DIAGRAM": {
+      "SUM": "Total"
+    },
+    "HEADER_ACTIONS": {
+      "EXPORT_ALL": "Export all",
+      "SHOW_CHART": "Show chart",
+      "HIDE_CHART": "Hide chart",
+      "CREATE_SEARCH_CONFIG": "Create search configuration",
+      "UPDATE_SEARCH_CONFIG": "Update search configuration",
+      "DIALOG_CONFIRM": "Confirm",
+      "DIALOG_CANCEL": "Cancel"
+    },
+    "ERROR_MESSAGES": {
+      "SEARCH_RESULTS_LOADING_FAILED": "Loading search results failed.",
+      "SEARCH_CONFIG_CREATION_FAILED": "Create search configuration failed.",
+      "SEARCH_CONFIG_UPDATE_FAILED": "Update search configuration failed.",
+      "SEARCH_CONFIGS_LOADING_FAILED": "Loading search configurations failed."
+    },
+    "PREDEFINED_GROUP": {
+      "DEFAULT": "Default",
+      "EXTENDED": "Extended",
+      "FULL": "Full"
+    },
+    "CRITERIA": {
+      "NAME": "Name",
+      "ALLOWED_WAGON_CLASS": "Allowed Wagon class",
+      "REMOTE_ID": "Remote ID",
+      "STATE": "State"
+    }
+  },
+  "TRAVELOFFERING_CREATION": {
+    "HEADER": "New Travel Offering"
+  },
+  "TRAVELOFFERING_DETAIL": {
+    "HEADER": "Travel Offering"
+  },
+  "GENERAL": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "DELETE": {
+      "HEADER": "Confirm Deletion",
+      "CONTENT": "Please confirm the deletion.",
+      "CONFIRM": "Delete"
+    },
+    "TRAVEL_OFFERING": {
+      "NAME": "Name",
+      "ALLOWED_WAGON_CLASS": "Allowed Wagon class",
+      "REMOTE_ID": "Remote ID",
+      "STATE": "State"
+    },
+    "TRAVEL_CONCESSION": {
+      "OFFERING": "Offering",
+      "STATE": "State",
+      "PRINCIPAL_ROLE": "Principal Role",
+      "CUSTOMER_RELATION_TO_PRINCIPAL": "Customer Relation to Principal"
+    }
+  }
+}

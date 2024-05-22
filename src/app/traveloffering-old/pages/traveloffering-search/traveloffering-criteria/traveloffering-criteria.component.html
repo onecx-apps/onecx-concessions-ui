@@ -1,0 +1,21 @@
+<ocx-search-criteria
+  [disableAdvancedToggle]="true"
+  [disableAdvancedToggle]="true"
+  [header]="'HELP_SEARCH.HEADER' | translate"
+  [subheader]="'HELP_SEARCH.SUBHEADER' | translate"
+  (search)="submitCriteria()"
+  (reset)="resetCriteria()"
+  [actions]="actions"
+>
+  <div simpleCriteria>
+    <div [formGroup]="travelofferingCriteriaGroup" class="flex flex-wrap gap-4 row-gap-3 px-2">
+      <span class="p-float-label">
+        <label for="traveloffering_search_criteria_appId">{{ 'HELP_ITEM.APPLICATION_ID' | translate }}</label>
+      </span>
+      <span class="p-float-label">
+        <input id="traveloffering_search_criteria_itemId" pInputText type="text" formControlName="itemId" class="w-18rem" />
+        <label for="traveloffering_search_criteria_itemId">{{ 'HELP_ITEM.HELP_ITEM_ID' | translate }}</label>
+      </span>
+    </div>
+  </div>
+</ocx-search-criteria>

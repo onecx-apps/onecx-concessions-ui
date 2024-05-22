@@ -1,0 +1,11 @@
+export * from './searchConfig.service';
+import { SearchConfigBffService } from './searchConfig.service';
+export * from './travelConcessionsInternal.service';
+import { TravelConcessionsInternalBffService } from './travelConcessionsInternal.service';
+export * from './travelOfferingsInternal.service';
+import { TravelOfferingsInternalBffService } from './travelOfferingsInternal.service';
+export * from './travelconcession.service';
+import { TravelconcessionBffService } from './travelconcession.service';
+export * from './traveloffering.service';
+import { TravelofferingBffService } from './traveloffering.service';
+export const APIS = [SearchConfigBffService, TravelConcessionsInternalBffService, TravelOfferingsInternalBffService, TravelconcessionBffService, TravelofferingBffService];
