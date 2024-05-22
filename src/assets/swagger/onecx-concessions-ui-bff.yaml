@@ -973,8 +973,12 @@ components:
       properties:
         state:
           type: string
-        offering:
-          $ref: "#/components/schemas/TravelOffering"
+        customerRelationToPrincipal:
+          type: string
+        principalRole:
+          type: string
+        offeringId:
+          type: string
     UpdateTravelConcession:
       required:
         - itemId
@@ -984,9 +988,11 @@ components:
         modificationCount:
           format: int32
           type: integer
-        name:
-          type: string
         state:
           type: string
-        offering:
-          $ref: "#/components/schemas/TravelOffering"
+        customerRelationToPrincipal:
+          type: string
+        principalRole:
+          type: string
+        offeringId:
+          type: string

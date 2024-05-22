@@ -28,7 +28,7 @@ import { travelconcessionFeature } from './travelconcession.reducers';
 import { routes } from './travelconcession.routes';
 import { TravelConcessionFormComponent } from './travelconcession-form/travelconcession-form.component';
 import { TravelConcessionDetailComponent } from './travelconcession-detail/travelconcession-detail.component';
-
+import { AutoCompleteModule } from 'primeng/autocomplete';
 @NgModule({
   declarations: [
     TravelconcessionDetailsComponent,    
@@ -39,6 +39,7 @@ import { TravelConcessionDetailComponent } from './travelconcession-detail/trave
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     CommonModule,
+    AutoCompleteModule,
     SharedModule,
     LetModule,
     PortalCoreModule.forMicroFrontend(),

@@ -1,8 +1,8 @@
 <p-dialog
   header="{{
     (this.changeMode === 'EDIT'
-      ? 'TRAVELOFFERING_DETAIL.HEADER'
-      : 'TRAVELOFFERING_CREATION.HEADER'
+      ? 'TRAVELCONCESSION_DETAIL.HEADER'
+      : 'TRAVELCONCESSION_CREATION.HEADER'
     ) | translate
   }}"
   [(visible)]="displayDetailDialog"
@@ -22,9 +22,10 @@
     '400px': '100vw',
       }"
 >
-  <app-travelconcession-form 
-  [changeMode]="changeMode"
-  [dataItem]="travelOfferingItem"
+  <app-travelconcession-form
+    [changeMode]="changeMode"
+    [dataItem]="travelOfferingItem"
+    [availableOfferings]="availableOfferings"
   ></app-travelconcession-form>
 
   <ng-template pTemplate="footer">

@@ -3,6 +3,7 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  OnInit,
   Output,
   ViewChild,
 } from '@angular/core';
@@ -12,6 +13,9 @@ import {
   CreateTravelConcession,
   TravelConcession,
   TravelConcessionsInternalBffService,
+  TravelOffering,
+  TravelOfferingsInternalBffService,
+  UpdateTravelConcession,
 } from 'src/app/shared/generated';
 import { TravelConcessionFormComponent } from '../travelconcession-form/travelconcession-form.component';
 
@@ -20,7 +24,7 @@ import { TravelConcessionFormComponent } from '../travelconcession-form/travelco
   templateUrl: './travelconcession-detail.component.html',
   styleUrls: ['./travelconcession-detail.component.scss'],
 })
-export class TravelConcessionDetailComponent implements OnChanges {
+export class TravelConcessionDetailComponent implements OnChanges, OnInit {
   @Input() public travelOfferingItem: TravelConcession | undefined;
   @Input() public changeMode = 'NEW';
   @Input() public displayDetailDialog = false;
@@ -31,11 +35,19 @@ export class TravelConcessionDetailComponent implements OnChanges {
   dataFormComponent!: TravelConcessionFormComponent;
 
   public itemId: string | undefined;
+  public availableOfferings: TravelOffering[] = [];
 
   constructor(
     private dataApi: TravelConcessionsInternalBffService,
+    private offeringApi: TravelOfferingsInternalBffService,
     private msgService: PortalMessageService
   ) {}
+
+  ngOnInit() {
+    this.offeringApi.searchTravelOfferings({}).subscribe((result) => {
+      if (result.stream) this.availableOfferings = result.stream;
+    });
+  }
 
   ngOnChanges() {
     if (this.changeMode === 'EDIT') {
@@ -61,10 +73,13 @@ export class TravelConcessionDetailComponent implements OnChanges {
 
   private createTravelOfferingItem() {
     if (this.dataFormComponent.formGroup.valid) {
+      const concession = this.dataFormComponent.formGroup
+        .value as CreateTravelConcession;
       this.dataApi
-        .createNewTravelConcession(
-          this.dataFormComponent.formGroup.value as CreateTravelConcession
-        )
+        .createNewTravelConcession({
+          ...concession,
+          offeringId: this.dataFormComponent.formGroup.value.offering.id,
+        })
         .subscribe({
           next: () => {
             this.searchEmitter.emit();
@@ -93,11 +108,13 @@ export class TravelConcessionDetailComponent implements OnChanges {
 
   private updateTravelOfferingItem(): void {
     if (this.dataFormComponent.formGroup.valid && this.itemId) {
+      const concession = this.dataFormComponent.formGroup
+        .value as UpdateTravelConcession;
       this.dataApi
-        .updateTravelConcession(
-          this.itemId,
-          this.dataFormComponent.formGroup.value
-        )
+        .updateTravelConcession(this.itemId, {
+          ...concession,
+          offeringId: this.dataFormComponent.formGroup.value.offering.id,
+        })
         .subscribe({
           next: () => {
             this.searchEmitter.emit();

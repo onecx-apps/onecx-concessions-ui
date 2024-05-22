@@ -9,11 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { TravelOffering } from './travelOffering';
 
 
 export interface CreateTravelConcession { 
     state?: string;
-    offering?: TravelOffering;
+    customerRelationToPrincipal?: string;
+    principalRole?: string;
+    offeringId?: string;
 }
 
