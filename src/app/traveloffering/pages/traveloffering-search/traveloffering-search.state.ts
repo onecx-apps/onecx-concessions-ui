@@ -3,12 +3,9 @@ import {
   SearchConfigInfo,
 } from '@onecx/portal-integration-angular';
 
-import { TravelofferingSearchCriteria } from './traveloffering-search.parameters';
-import {
-  TravelOffering,
-  TravelOfferingPageResult,
-} from 'src/app/shared/generated';
+import { TravelOffering } from 'src/app/shared/generated';
 import { SearchConfig } from 'src/app/shared/generated/model/searchConfig';
+import { TravelofferingSearchCriteria } from './traveloffering-search.parameters';
 
 export interface TravelofferingSearchState {
   columns: DataTableColumn[];

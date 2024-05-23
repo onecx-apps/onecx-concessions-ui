@@ -7,10 +7,9 @@ import {
 } from '@onecx/portal-integration-angular';
 import { Observable } from 'rxjs';
 
-import { PrimeIcons } from 'primeng/api';
+import { TranslateService } from '@ngx-translate/core';
 import { selectTravelconcessionDetailsViewModel } from './travelconcession-details.selectors';
 import { TravelconcessionDetailsViewModel } from './travelconcession-details.viewmodel';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-travelconcession-details',
@@ -30,13 +29,6 @@ export class TravelconcessionDetailsComponent implements OnInit {
       actionCallback: () => {
         window.history.back();
       },
-    },
-    {
-      titleKey: 'TRAVELCONCESSION_DETAILS.GENERAL.MORE',
-      icon: PrimeIcons.ELLIPSIS_V,
-      show: 'always',
-      btnClass: '',
-      actionCallback: () => {},
     },
   ];
 
@@ -68,7 +60,9 @@ export class TravelconcessionDetailsComponent implements OnInit {
           value: vm.details?.offering?.name,
         },
         {
-          label: this.translateService.instant('GENERAL.TRAVEL_CONCESSION.STATE'),
+          label: this.translateService.instant(
+            'GENERAL.TRAVEL_CONCESSION.STATE'
+          ),
           value: vm.details?.state,
         },
         {

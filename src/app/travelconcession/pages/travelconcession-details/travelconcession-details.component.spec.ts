@@ -1,14 +1,15 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TravelconcessionDetailsComponent } from './travelconcession-details.component';
 import { ActivatedRoute } from '@angular/router';
 import { LetModule } from '@ngrx/component';
 import { provideMockStore } from '@ngrx/store/testing';
-import { TranslateTestingModule } from 'ngx-translate-testing';
 import {
   BreadcrumbService,
   PortalCoreModule,
 } from '@onecx/portal-integration-angular';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TranslateTestingModule } from 'ngx-translate-testing';
+import { TravelconcessionDetailsComponent } from './travelconcession-details.component';
 import { initialState } from './travelconcession-details.reducers';
 
 describe('TravelconcessionDetailsComponent', () => {

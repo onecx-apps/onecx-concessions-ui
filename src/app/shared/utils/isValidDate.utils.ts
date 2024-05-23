@@ -1,3 +1,3 @@
-export function isValidDate(value: any): value is Date {
-  return value instanceof Date && !isNaN(value as any);
+export function isValidDate(value: unknown): value is Date {
+  return value instanceof Date && !isNaN(value as never);
 }

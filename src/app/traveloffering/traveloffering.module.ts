@@ -19,17 +19,16 @@ import {
   createTranslateLoader,
 } from '@onecx/portal-integration-angular';
 import { CalendarModule } from 'primeng/calendar';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { SharedModule } from '../shared/shared.module';
 import { TravelofferingDetailsComponent } from './pages/traveloffering-details/traveloffering-details.component';
 import { TravelofferingDetailsEffects } from './pages/traveloffering-details/traveloffering-details.effects';
 import { TravelofferingSearchComponent } from './pages/traveloffering-search/traveloffering-search.component';
 import { TravelofferingSearchEffects } from './pages/traveloffering-search/traveloffering-search.effects';
+import { TravelOfferingDetailComponent } from './traveloffering-detail/traveloffering-detail.component';
 import { TravelOfferingFormComponent } from './traveloffering-form/traveloffering-form.component';
 import { travelofferingFeature } from './traveloffering.reducers';
 import { routes } from './traveloffering.routes';
-import { TravelOfferingDetailComponent } from './traveloffering-detail/traveloffering-detail.component';
-import { DialogModule } from 'primeng/dialog';
-import { DynamicDialogModule } from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [

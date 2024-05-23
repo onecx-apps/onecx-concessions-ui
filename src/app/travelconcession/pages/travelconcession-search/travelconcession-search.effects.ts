@@ -49,7 +49,7 @@ export class TravelconcessionSearchEffects {
   createSearchConfig$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(TravelconcessionSearchActions.createSearchConfigClicked),
-      mergeMap((action) => {
+      mergeMap(() => {
         return this.portalDialogService.openDialog(
           'TRAVELCONCESSION_SEARCH.HEADER_ACTIONS.CREATE_SEARCH_CONFIG',
           CreateOrEditSearchConfigDialogComponent,
@@ -77,6 +77,7 @@ export class TravelconcessionSearchEffects {
             ? Object.fromEntries(
                 Object.keys(viewState?.searchCriteria ?? {}).map((k) => [
                   k,
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   (viewState?.searchCriteria as Record<string, any>)[
                     k
                   ].toString(),
@@ -149,6 +150,7 @@ export class TravelconcessionSearchEffects {
             ? Object.fromEntries(
                 Object.keys(viewState?.searchCriteria ?? {}).map((k) => [
                   k,
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   (viewState?.searchCriteria as Record<string, any>)[
                     k
                   ].toString(),

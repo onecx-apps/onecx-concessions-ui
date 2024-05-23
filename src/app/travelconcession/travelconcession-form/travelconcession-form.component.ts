@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Column } from '@onecx/portal-integration-angular';
@@ -81,7 +81,7 @@ export class TravelConcessionFormComponent implements OnChanges {
     this.filteredOfferings = filtered;
   }
 
-  ngOnChanges(): void {    
+  ngOnChanges(): void {
     if (this.dataItem) {
       this.formGroup.patchValue({
         ...this.dataItem,
