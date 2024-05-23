@@ -44,7 +44,8 @@
     "CRITERIA": {
       "PRINCIPAL_ROLE": "Principal Role",
       "CUSTOMER_RELATION_TO_PRINCIPAL": "Customer Relation to Principal",
-      "OFFERING": "Offering Name"
+      "OFFERING": "Offering Name",
+      "STATE": "State"
     }
   },
   "TRAVELOFFERING_DETAILS": {

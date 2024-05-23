@@ -16,7 +16,7 @@
   >
     <form [formGroup]="travelconcessionSearchFormGroup">
       <div class="grid mt-0 p-fluid">
-        <div class="col-12 md:col-6">
+        <div class="col-12 md:col-3">
           <span class="p-float-label">
             <input
               id="offeringName"
@@ -31,7 +31,7 @@
             }}</label>
           </span>
         </div>
-        <div class="col-12 md:col-4">
+        <div class="col-12 md:col-3">
           <span class="p-float-label">
             <input
               id="principalRole"
@@ -46,7 +46,7 @@
             }}</label>
           </span>
         </div>
-        <div class="col-12 md:col-8">
+        <div class="col-12 md:col-4">
           <span class="p-float-label">
             <input
               id="customerRelationToPrincipal"
@@ -59,6 +59,23 @@
             <label for="customerRelationToPrincipal">{{
               'TRAVELCONCESSION_SEARCH.CRITERIA.CUSTOMER_RELATION_TO_PRINCIPAL'
                 | translate
+            }}</label>
+          </span>
+        </div>
+        <div class="col-12 md:col-3">
+          <span class="p-float-label">
+            <p-dropdown
+              display="chip"
+              [options]="dropdownStateOptions"
+              id="state"
+              [showClear]="true"
+              formControlName="state"
+              appendTo="body"
+              scrollHeight="250px"
+              [(ngModel)]="vm.searchCriteria.state"
+            ></p-dropdown>
+            <label for="state">{{
+              'TRAVELCONCESSION_SEARCH.CRITERIA.STATE' | translate
             }}</label>
           </span>
         </div>

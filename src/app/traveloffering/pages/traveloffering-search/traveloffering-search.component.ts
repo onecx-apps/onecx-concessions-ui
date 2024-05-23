@@ -33,7 +33,22 @@ export class TravelofferingSearchComponent implements OnInit {
     selectTravelofferingSearchViewModel
   );
 
-  // ACTION S10: Update header actions
+  public dropdownStateOptions = [
+    undefined,
+    {
+      label: 'INITIALIZED',
+      value: 'INITIALIZED',
+    },
+    {
+      label: 'ACTIVE',
+      value: 'ACTIVE',
+    },
+    {
+      label: 'INACTIVE',
+      value: 'INACTIVE',
+    },
+  ];
+  
   headerActions$: Observable<Action[]> = this.viewModel$.pipe(
     map((vm) => {
       const actions: Action[] = [
