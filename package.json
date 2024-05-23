@@ -9,7 +9,8 @@
     "format": "nx format:write --uncommitted",
     "lint": "nx lint",
     "lint:fix": "nx lint --fix",
-    "test": "nx test"
+    "test": "nx test",
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless --code-coverage"
   },
   "private": true,
   "dependencies": {
