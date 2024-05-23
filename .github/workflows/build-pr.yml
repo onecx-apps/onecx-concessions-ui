@@ -7,5 +7,3 @@ jobs:
   pr:
     uses: onecx-apps/ci-angular/.github/workflows/build-pr.yml@v1
     secrets: inherit
-    with:
-      node: 20

@@ -12,5 +12,5 @@ jobs:
     uses: onecx-apps/ci-angular/.github/workflows/build.yml@v1
     secrets: inherit
     with:
-      helmEventTargetRepository: onecx-apps/onecx-consessions        
-      node: 20
+      helmEventTargetRepository: onecx-apps/onecx-consessions
+

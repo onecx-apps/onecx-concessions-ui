@@ -7,5 +7,3 @@ jobs:
   release:
     uses: onecx-apps/ci-angular/.github/workflows/build-release.yml@v1
     secrets: inherit
-    with:
-      node: 20
