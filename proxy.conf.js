@@ -26,7 +26,7 @@ const PROXY_CONFIG = {
     bypass: bypassFn,
   },
   '/bff': {
-    target: 'http://localhost:8080',
+    target: 'http://onecx-concessions-bff',
     secure: false,
     pathRewrite: {
       '^.*/bff': 'internal',
