@@ -9,7 +9,7 @@ COPY dist/onecx-concessions-ui/ $DIR_HTML
 #ENV CONFIG_ENV_LIST BFF_URL,APP_BASE_HREF
 
 # Application environments default values
-ENV BFF_URL http://onecx-concessions-ui-bff:8080/
+ENV BFF_URL http://onecx-concessions-bff:8080/
 ENV APP_BASE_HREF /
 ENV TKIT_PORTAL_URL http://tkit-portal-server/
 
