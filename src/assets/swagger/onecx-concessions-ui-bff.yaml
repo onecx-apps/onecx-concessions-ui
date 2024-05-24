@@ -1,10 +1,10 @@
 ---
 openapi: 3.0.3
 info:
-  title: onecx-consessions internal service
+  title: onecx-concessions bff
   version: 1.0.0
 servers:
-  - url: "http://onecx-consessions-svc:8080"
+  - url: "http://onecx-concessions-bff:8080"
 tags:
   - name: travelConcessionInternal
   - name: travelOfferingsInternal
