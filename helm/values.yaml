@@ -4,7 +4,7 @@ app:
     repository: onecx-apps/onecx-concessions-ui
   routing:
     enabled: true
-    path: /mfe/onecxconcessionsUi/
+    path: /mfe/concessions/
   operator:
     microfrontend:
       enabled: true
@@ -12,6 +12,7 @@ app:
         exposedModule: ./OnecxconcessionsUiModule
         description: OneCX OnecxconcessionsUi Module
         note: OneCX OnecxconcessionsUi UI module auto import via MF operator
+        type: MODULE
     permission:
       enabled: true
       spec:
