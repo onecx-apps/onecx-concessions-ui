@@ -1,4 +1,4 @@
-import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import { createActionGroup, props } from '@ngrx/store';
 import { TravelConcession } from '../../../shared/generated';
 
 export const TravelconcessionDetailsActions = createActionGroup({

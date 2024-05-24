@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TravelofferingDetailsComponent } from './traveloffering-details.component';
 import { ActivatedRoute } from '@angular/router';

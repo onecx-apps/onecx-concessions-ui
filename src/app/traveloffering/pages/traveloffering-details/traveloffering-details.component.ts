@@ -8,7 +8,6 @@ import {
 } from '@onecx/portal-integration-angular';
 import { Observable } from 'rxjs';
 
-import { PrimeIcons } from 'primeng/api';
 import { selectTravelofferingDetailsViewModel } from './traveloffering-details.selectors';
 import { TravelofferingDetailsViewModel } from './traveloffering-details.viewmodel';
 
@@ -28,13 +27,6 @@ export class TravelofferingDetailsComponent implements OnInit {
       actionCallback: () => {
         window.history.back();
       },
-    },
-    {
-      titleKey: 'TRAVELOFFERING_DETAILS.GENERAL.MORE',
-      icon: PrimeIcons.ELLIPSIS_V,
-      show: 'always',
-      btnClass: '',
-      actionCallback: () => {},
     },
   ];
 

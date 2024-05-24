@@ -44,7 +44,8 @@
     "CRITERIA": {
       "PRINCIPAL_ROLE": "Hauptberechtigter-Rolle",
       "CUSTOMER_RELATION_TO_PRINCIPAL": "Beziehung zu HB",
-      "OFFERING": "Angebots-Name"
+      "OFFERING": "Angebots-Name",
+      "STATE": "Status"
     }
   },
   "TRAVELOFFERING_DETAILS": {

@@ -63,14 +63,16 @@
         </div>
         <div class="col-12 md:col-3">
           <span class="p-float-label">
-            <input
-              id="state"
-              pInputText
-              type="string"
-              formControlName="state"
-              class="p-inputtext p-component"
-              [ngModel]="vm.searchCriteria.state"
-            />
+            <p-dropdown
+            display="chip"
+            [options]="dropdownStateOptions"
+            id="state"            
+            formControlName="state"
+            placeholder="State"
+            appendTo="body" 
+            scrollHeight="250px"            
+            [(ngModel)]="vm.searchCriteria.state"
+          ></p-dropdown>
             <label for="state">{{
               'TRAVELOFFERING_SEARCH.CRITERIA.STATE' | translate
             }}</label>

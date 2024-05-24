@@ -12,6 +12,7 @@
 
 
 export interface TravelConcessionSearchCriteria { 
+    state?: string;
     principalRole?: string;
     customerRelationToPrincipal?: string;
     offeringName?: string;
