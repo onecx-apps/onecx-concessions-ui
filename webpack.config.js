@@ -3,11 +3,11 @@ const {
   withModuleFederationPlugin,
 } = require('@angular-architects/module-federation/webpack');
 const config = withModuleFederationPlugin({
-  name: 'onecx-concessions-ui-app',
+  name: 'onecx-concessions-ui',
   filename: 'remoteEntry.js',
   exposes: {
     './OnecxconcessionsUiModule':
-      './src/app/onecx-concessions-ui-app.remote.module.ts',
+      './src/app/onecx-concessions-ui.remote.module.ts',
   },
   shared: share({
     '@angular/core': {
