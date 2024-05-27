@@ -7,14 +7,12 @@ import { LetModule } from '@ngrx/component';
 import { ofType } from '@ngrx/effects';
 import { Store, StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import {
-  PortalCoreModule,
-  PortalDialogService,
-} from '@onecx/portal-integration-angular';
+import { PortalCoreModule } from '@onecx/portal-integration-angular';
 import { TranslateTestingModule } from 'ngx-translate-testing';
 import { TravelofferingSearchActions } from './traveloffering-search.actions';
 import { TravelofferingSearchComponent } from './traveloffering-search.component';
 import { initialState } from './traveloffering-search.reducers';
+import { DialogService } from 'primeng/dynamicdialog';
 
 describe('TravelofferingSearchComponent', () => {
   let component: TravelofferingSearchComponent;
@@ -55,7 +53,7 @@ describe('TravelofferingSearchComponent', () => {
         HttpClientTestingModule,
       ],
       providers: [
-        PortalDialogService,
+        DialogService,
         provideMockStore({
           initialState: { traveloffering: { search: initialState } },
         }),
