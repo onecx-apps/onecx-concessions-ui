@@ -23,9 +23,9 @@ import {
   PortalMissingTranslationHandler,
   UserService,
   createTranslateLoader,
+  providePortalDialogService,
   translateServiceInitializer,
 } from '@onecx/portal-integration-angular';
-import { DialogService } from 'primeng/dynamicdialog';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -71,8 +71,7 @@ export const commonImports = [CommonModule];
     }),
   ],
   providers: [
-    DialogService,
-    DialogService,
+    providePortalDialogService(),
     { provide: APP_CONFIG, useValue: environment },
     {
       provide: APP_INITIALIZER,

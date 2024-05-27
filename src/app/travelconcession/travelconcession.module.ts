@@ -17,6 +17,7 @@ import {
   PortalMissingTranslationHandler,
   addInitializeModuleGuard,
   createTranslateLoader,
+  providePortalDialogService,
 } from '@onecx/portal-integration-angular';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CalendarModule } from 'primeng/calendar';
@@ -67,5 +68,6 @@ import { routes } from './travelconcession.routes';
       },
     }),
   ],
+  providers: [providePortalDialogService()],
 })
 export class TravelconcessionModule {}

@@ -17,6 +17,7 @@ import {
   PortalMissingTranslationHandler,
   addInitializeModuleGuard,
   createTranslateLoader,
+  providePortalDialogService,
 } from '@onecx/portal-integration-angular';
 import { CalendarModule } from 'primeng/calendar';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
@@ -67,5 +68,6 @@ import { routes } from './traveloffering.routes';
       },
     }),
   ],
+  providers: [providePortalDialogService()],
 })
 export class TravelOfferingModule {}

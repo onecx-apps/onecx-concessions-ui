@@ -4,15 +4,17 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { LetModule } from '@ngrx/component';
+import { ofType } from '@ngrx/effects';
 import { Store, StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { PortalCoreModule } from '@onecx/portal-integration-angular';
+import {
+  PortalCoreModule,
+  PortalDialogService,
+} from '@onecx/portal-integration-angular';
 import { TranslateTestingModule } from 'ngx-translate-testing';
 import { TravelconcessionSearchActions } from './travelconcession-search.actions';
 import { TravelconcessionSearchComponent } from './travelconcession-search.component';
 import { initialState } from './travelconcession-search.reducers';
-import { ofType } from '@ngrx/effects';
-import { DialogService } from 'primeng/dynamicdialog';
 
 describe('TravelconcessionSearchComponent', () => {
   let component: TravelconcessionSearchComponent;
@@ -53,7 +55,7 @@ describe('TravelconcessionSearchComponent', () => {
         HttpClientTestingModule,
       ],
       providers: [
-        DialogService,
+        PortalDialogService,
         provideMockStore({
           initialState: { travelconcession: { search: initialState } },
         }),
