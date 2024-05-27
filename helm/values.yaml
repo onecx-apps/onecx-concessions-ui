@@ -1,7 +1,7 @@
 app:
   name: ui
   image:
-    repository: 'onecx-apps/onecx-concessions-ui'
+    repository: "onecx-apps/onecx-concessions-ui"
   routing:
     enabled: true
     path: /mfe/concessions/
@@ -9,10 +9,11 @@ app:
     microfrontend:
       enabled: true
       specs:
-        exposedModule: './OnecxconcessionsUiModule'
-        description: "OneCX OnecxconcessionsUi Module"
-        note: "OneCX OnecxconcessionsUi UI module auto import via MF operator"
-        type: MODULE
+        main:
+          exposedModule: "./OnecxconcessionsUiModule"
+          description: "OneCX OnecxconcessionsUi Module"
+          note: "OneCX OnecxconcessionsUi UI module auto import via MF operator"
+          type: MODULE
     permission:
       enabled: true
       spec:
