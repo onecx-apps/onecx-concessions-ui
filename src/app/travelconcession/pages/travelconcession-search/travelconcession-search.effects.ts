@@ -116,7 +116,7 @@ export class TravelconcessionSearchEffects {
       ),
       mergeMap(([, selectedSearchConfig]) => {
         return this.portalDialogService.openDialog<CreateOrEditSearchDialogContent>(
-          'CONSTRUCTION_TASK_SEARCH.HEADER_ACTIONS.UPDATE_SEARCH_CONFIG',
+          'CONCESSIONS_SEARCH.HEADER_ACTIONS.UPDATE_SEARCH_CONFIG',
           {
             type: CreateOrEditSearchConfigDialogComponent,
             inputs: {
@@ -332,7 +332,7 @@ export class TravelconcessionSearchEffects {
       filterOutOnlyQueryParamsChanged(this.router),
       switchMap(() =>
         this.searchConfigService
-          .getSearchConfigInfos('construction-task-search')
+          .getSearchConfigInfos('concessions-search')
           .pipe(
             map(({ configs }) =>
               TravelconcessionSearchActions.searchConfigInfosReceived({

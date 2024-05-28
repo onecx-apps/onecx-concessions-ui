@@ -70,24 +70,24 @@ export class TravelOfferingDetailComponent implements OnChanges {
           next: () => {
             this.searchEmitter.emit();
             this.msgService.success({
-              summaryKey: 'TRAVEL_OFFERING_CREATION.CREATION_SUCCESS',
+              summaryKey: 'TRAVELOFFERING_CREATION.CREATION_SUCCESS',
             });
             this.displayDetailDialog = false;
           },
           error: (err: { error: { key: string } }) => {
             err.error.key && err.error.key === 'PERSIST_ENTITY_FAILED'
               ? this.msgService.error({
-                  summaryKey: 'TRAVEL_OFFERING_CREATION.CREATION_FAILED',
-                  detailKey: 'TRAVEL_OFFERING_CREATION.UNIQUE_CONSTRAINT',
+                  summaryKey: 'TRAVELOFFERING_CREATION.CREATION_FAILED',
+                  detailKey: 'TRAVELOFFERING_CREATION.UNIQUE_CONSTRAINT',
                 })
               : this.msgService.error({
-                  summaryKey: 'TRAVEL_OFFERING_CREATION.CREATION_FAILED',
+                  summaryKey: 'TRAVELOFFERING_CREATION.CREATION_FAILED',
                 });
           },
         });
     } else {
       this.msgService.error({
-        summaryKey: 'TRAVEL_OFFERING_CREATION.VALIDATION_ERROR',
+        summaryKey: 'TRAVELOFFERING_CREATION.VALIDATION_ERROR',
       });
     }
   }

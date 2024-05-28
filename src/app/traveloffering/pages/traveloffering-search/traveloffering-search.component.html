@@ -64,15 +64,15 @@
         <div class="col-12 md:col-3">
           <span class="p-float-label">
             <p-dropdown
-            display="chip"
-            [options]="dropdownStateOptions"
-            id="state"            
-            formControlName="state"
-            placeholder="State"
-            appendTo="body" 
-            scrollHeight="250px"            
-            [(ngModel)]="vm.searchCriteria.state"
-          ></p-dropdown>
+              display="chip"
+              [options]="dropdownStateOptions"
+              id="state"
+              formControlName="state"
+              placeholder="State"
+              appendTo="body"
+              scrollHeight="250px"
+              [(ngModel)]="vm.searchCriteria.state"
+            ></p-dropdown>
             <label for="state">{{
               'TRAVELOFFERING_SEARCH.CRITERIA.STATE' | translate
             }}</label>
@@ -92,8 +92,8 @@
             [data]="vm.results"
             [columns]="vm.columns"
             viewPermission="TRAVELOFFERING#VIEW"
-            editPermission="TRAVELOFFERING#VIEW"
-            deletePermission="TRAVELOFFERING#VIEW"
+            editPermission="TRAVELOFFERING#EDIT"
+            deletePermission="TRAVELOFFERING#DELETE"
             [listGridPaginator]="false"
             [emptyResultsMessage]="
               'TRAVELOFFERING_SEARCH.EMPTY_RESULTS' | translate
@@ -122,12 +122,12 @@
         ></ocx-group-by-count-diagram>
       </div>
     </ocx-content>
-    <app-traveloffering-detail
-      [displayDetailDialog]="vm.displayDetailDialog"
-      (displayDetailDialogChange)="onDetailClose()"
-      [travelOfferingItem]="vm.dataItem"
-      [changeMode]="vm.changeMode"
-      (searchEmitter)="search(travelofferingSearchFormGroup)"
-    ></app-traveloffering-detail>
   </ocx-content-container>
+  <app-traveloffering-detail
+    [displayDetailDialog]="vm.displayDetailDialog"
+    (displayDetailDialogChange)="onDetailClose()"
+    [travelOfferingItem]="vm.dataItem"
+    [changeMode]="vm.changeMode"
+    (searchEmitter)="search(travelofferingSearchFormGroup)"
+  ></app-traveloffering-detail>
 </ocx-portal-page>

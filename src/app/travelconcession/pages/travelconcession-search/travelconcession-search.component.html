@@ -93,8 +93,8 @@
             [data]="vm.results"
             [columns]="vm.columns"
             viewPermission="TRAVELCONCESSION#VIEW"
-            editPermission="TRAVELOFFERING#VIEW"
-            deletePermission="TRAVELOFFERING#VIEW"
+            editPermission="TRAVELCONCESSION#EDIT"
+            deletePermission="TRAVELCONCESSION#DELETE"
             [listGridPaginator]="false"
             [emptyResultsMessage]="
               'TRAVELCONCESSION_SEARCH.EMPTY_RESULTS' | translate
@@ -123,12 +123,12 @@
         ></ocx-group-by-count-diagram>
       </div>
     </ocx-content>
-    <app-travelconcession-detail
-      [displayDetailDialog]="vm.displayDetailDialog"
-      (displayDetailDialogChange)="onDetailClose()"
-      [travelOfferingItem]="vm.dataItem"
-      [changeMode]="vm.changeMode"
-      (searchEmitter)="search(travelconcessionSearchFormGroup)"
-    ></app-travelconcession-detail>
   </ocx-content-container>
+  <app-travelconcession-detail
+    [displayDetailDialog]="vm.displayDetailDialog"
+    (displayDetailDialogChange)="onDetailClose()"
+    [travelOfferingItem]="vm.dataItem"
+    [changeMode]="vm.changeMode"
+    (searchEmitter)="search(travelconcessionSearchFormGroup)"
+  ></app-travelconcession-detail>
 </ocx-portal-page>
