@@ -23,6 +23,8 @@
           [options]="dropdownOptions"
           formControlName="state"
           placeholder="State"
+          appendTo="body"
+          [style]="{ width: '100%' }"
         ></p-dropdown>
         <label class="" for="traveloffering_detail_form_state">{{
           'GENERAL.TRAVEL_OFFERING.STATE' | translate
@@ -54,6 +56,23 @@
         />
         <label class="" for="traveloffering_detail_form_remote_id">{{
           'GENERAL.TRAVEL_OFFERING.REMOTE_ID' | translate
+        }}</label>
+      </span>
+    </div>
+    <div [title]="'GENERAL.TRAVEL_OFFERING.GROUP' | translate">
+      <span class="p-float-label">
+        <p-dropdown
+          display="chip"
+          [options]="groupOptions"
+          id="group"
+          [showClear]="true"
+          formControlName="group"
+          appendTo="body"
+          scrollHeight="250px"
+          [style]="{ width: '100%' }"
+        ></p-dropdown>
+        <label class="" for="traveloffering_detail_form_group">{{
+          'GENERAL.TRAVEL_OFFERING.GROUP' | translate
         }}</label>
       </span>
     </div>

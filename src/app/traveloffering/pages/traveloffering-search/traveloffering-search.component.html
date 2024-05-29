@@ -65,6 +65,23 @@
           <span class="p-float-label">
             <p-dropdown
               display="chip"
+              [options]="groupOptions"
+              id="group"
+              [showClear]="true"
+              formControlName="group"
+              appendTo="body"
+              scrollHeight="250px"
+              [(ngModel)]="vm.searchCriteria.group"
+            ></p-dropdown>
+            <label for="group">{{
+              'TRAVELOFFERING_SEARCH.CRITERIA.GROUP' | translate
+            }}</label>
+          </span>
+        </div>
+        <div class="col-12 md:col-3">
+          <span class="p-float-label">
+            <p-dropdown
+              display="chip"
               [options]="dropdownStateOptions"
               id="state"
               formControlName="state"
@@ -101,6 +118,22 @@
             [supportedViewLayouts]="['table']"
             (displayedColumnsChange)="onDisplayedColumnsChange($event)"
           >
+            <ng-template
+              #tableCell
+              let-rowObject="rowObject"
+              let-column="column"
+            >
+              <ng-container *ngIf="column.id === 'group'">
+                <span class="bg-green-400 border-round-sm p-1">
+                  {{ getGroupLabel(rowObject.group) }}
+                </span>
+              </ng-container>
+              <ng-container *ngIf="column.id !== 'group'">
+                <span>
+                  {{ rowObject[column.id]  }}
+                </span>
+              </ng-container>
+            </ng-template>
           </ocx-interactive-data-view>
         </div>
       </div>

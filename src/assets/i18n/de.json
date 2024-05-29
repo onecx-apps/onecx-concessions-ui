@@ -94,7 +94,8 @@
       "NAME": "Name",
       "ALLOWED_WAGON_CLASS": "Erlaubte Wagenklasse",
       "REMOTE_ID": "Remote ID",
-      "STATE": "Status"
+      "STATE": "Status",
+      "GROUP": "Gruppe"
     }
   },
   "TRAVELOFFERING_CREATION": {
@@ -136,7 +137,14 @@
       "NAME": "Name",
       "ALLOWED_WAGON_CLASS": "Erlaubte Wagenklasse",
       "REMOTE_ID": "Remote ID",
-      "STATE": "Status"
+      "STATE": "Status",
+      "GROUP": "Gruppe",
+      "GROUP_OPTIONS": {
+        "DAILY_M_FAR": "Tages Ticket M Fern",
+        "REGIO_M_50": "Regio Ticket M",
+        "PUPIL_M": "Schüler Ticket M",
+        "DB_JOB_M": "DB Job-Ticket M"
+      }
     },
     "TRAVEL_CONCESSION": {
       "OFFERING": "Angebot",

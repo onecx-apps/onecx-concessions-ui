@@ -48,7 +48,11 @@ export class TravelofferingSearchComponent implements OnInit {
       value: 'INACTIVE',
     },
   ];
-  
+
+  public groupOptions: [{ label: string; value: string } | undefined] = [
+    undefined,
+  ];
+
   headerActions$: Observable<Action[]> = this.viewModel$.pipe(
     map((vm) => {
       const actions: Action[] = [
@@ -128,6 +132,8 @@ export class TravelofferingSearchComponent implements OnInit {
     private translateService: TranslateService
   ) {}
 
+  private groupKeys = ['DAILY_M_FAR', 'REGIO_M_50', 'PUPIL_M', 'DB_JOB_M'];
+
   ngOnInit() {
     this.breadcrumbService.setItems([
       {
@@ -136,6 +142,19 @@ export class TravelofferingSearchComponent implements OnInit {
         routerLink: '/traveloffering',
       },
     ]);
+
+    this.groupKeys.forEach((key) => {
+      this.groupOptions.push({
+        label: this.translateService.instant(
+          'GENERAL.TRAVEL_OFFERING.GROUP_OPTIONS.' + key
+        ),
+        value: key,
+      });
+    });
+  }
+
+  getGroupLabel(key: string) {
+    return this.groupOptions.find((i) => i?.value == key)?.label;
   }
 
   search(formValue: FormGroup) {

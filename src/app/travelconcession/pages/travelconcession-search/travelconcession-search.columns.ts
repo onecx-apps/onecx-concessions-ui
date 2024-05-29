@@ -8,9 +8,9 @@ export const travelconcessionSearchColumns: DataTableColumn[] = [
     filterable: true,
     sortable: true,
     predefinedGroupKeys: [
-      'FEATURE_SEARCH.PREDEFINED_GROUP.DEFAULT',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.EXTENDED',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.FULL',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.DEFAULT',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.EXTENDED',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.FULL',
     ],
   },
   {
@@ -20,9 +20,9 @@ export const travelconcessionSearchColumns: DataTableColumn[] = [
     filterable: true,
     sortable: true,
     predefinedGroupKeys: [
-      'FEATURE_SEARCH.PREDEFINED_GROUP.DEFAULT',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.EXTENDED',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.FULL',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.DEFAULT',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.EXTENDED',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.FULL',
     ],
   },
   {
@@ -32,9 +32,9 @@ export const travelconcessionSearchColumns: DataTableColumn[] = [
     filterable: true,
     sortable: true,
     predefinedGroupKeys: [
-      'FEATURE_SEARCH.PREDEFINED_GROUP.DEFAULT',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.EXTENDED',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.FULL',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.DEFAULT',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.EXTENDED',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.FULL',
     ],
   },
   {
@@ -44,9 +44,9 @@ export const travelconcessionSearchColumns: DataTableColumn[] = [
     filterable: true,
     sortable: true,
     predefinedGroupKeys: [
-      'FEATURE_SEARCH.PREDEFINED_GROUP.DEFAULT',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.EXTENDED',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.FULL',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.DEFAULT',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.EXTENDED',
+      'TRAVELCONCESSION_SEARCH.PREDEFINED_GROUP.FULL',
     ],
   },
 ];
