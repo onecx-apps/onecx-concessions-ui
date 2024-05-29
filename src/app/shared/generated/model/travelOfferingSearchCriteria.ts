@@ -16,6 +16,7 @@ export interface TravelOfferingSearchCriteria {
     name?: string;
     allowedWagonClass?: string;
     remoteId?: string;
+    group?: string;
     /**
      * The number of page.
      */
