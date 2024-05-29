@@ -8,9 +8,9 @@ export const travelofferingSearchColumns: DataTableColumn[] = [
     filterable: true,
     sortable: true,
     predefinedGroupKeys: [
-      'FEATURE_SEARCH.PREDEFINED_GROUP.DEFAULT',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.EXTENDED',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.FULL',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.DEFAULT',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.EXTENDED',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.FULL',
     ],
   },
   {
@@ -20,9 +20,9 @@ export const travelofferingSearchColumns: DataTableColumn[] = [
     filterable: true,
     sortable: true,
     predefinedGroupKeys: [
-      'FEATURE_SEARCH.PREDEFINED_GROUP.DEFAULT',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.EXTENDED',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.FULL',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.DEFAULT',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.EXTENDED',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.FULL',
     ],
   },
   {
@@ -32,9 +32,21 @@ export const travelofferingSearchColumns: DataTableColumn[] = [
     filterable: true,
     sortable: true,
     predefinedGroupKeys: [
-      'FEATURE_SEARCH.PREDEFINED_GROUP.DEFAULT',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.EXTENDED',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.FULL',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.DEFAULT',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.EXTENDED',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.FULL',
+    ],
+  },
+  {
+    columnType: ColumnType.STRING,
+    id: 'group',
+    nameKey: 'GENERAL.TRAVEL_OFFERING.GROUP',
+    filterable: true,
+    sortable: true,
+    predefinedGroupKeys: [
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.DEFAULT',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.EXTENDED',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.FULL',
     ],
   },
   {
@@ -44,9 +56,9 @@ export const travelofferingSearchColumns: DataTableColumn[] = [
     filterable: true,
     sortable: true,
     predefinedGroupKeys: [
-      'FEATURE_SEARCH.PREDEFINED_GROUP.DEFAULT',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.EXTENDED',
-      'FEATURE_SEARCH.PREDEFINED_GROUP.FULL',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.DEFAULT',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.EXTENDED',
+      'TRAVELOFFERING_SEARCH.PREDEFINED_GROUP.FULL',
     ],
   },
 ];

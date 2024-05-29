@@ -17,5 +17,6 @@ export interface CreateTravelOffering {
     allowedWagonClass?: string;
     requiredPayment?: number;
     remoteId?: string;
+    group?: string;
 }
 

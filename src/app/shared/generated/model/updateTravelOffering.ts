@@ -17,5 +17,6 @@ export interface UpdateTravelOffering {
     allowedWagonClass?: string;
     requiredPayment?: number;
     remoteId?: string;
+    group?: string;
 }
 

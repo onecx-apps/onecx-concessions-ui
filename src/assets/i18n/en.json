@@ -94,7 +94,8 @@
       "NAME": "Name",
       "ALLOWED_WAGON_CLASS": "Allowed Wagon class",
       "REMOTE_ID": "Remote ID",
-      "STATE": "State"
+      "STATE": "State",
+      "GROUP": "Group"
     }
   },
   "TRAVELOFFERING_CREATION": {
@@ -136,7 +137,14 @@
       "NAME": "Name",
       "ALLOWED_WAGON_CLASS": "Allowed Wagon class",
       "REMOTE_ID": "Remote ID",
-      "STATE": "State"
+      "STATE": "State",
+      "GROUP": "Group",
+      "GROUP_OPTIONS": {
+        "DAILY_M_FAR": "Daily Ticket M Far",
+        "REGIO_M_50": "Regio Ticket M",
+        "PUPIL_M": "Pupil Ticket M",
+        "DB_JOB_M": "DB Job-Ticket M"
+      }
     },
     "TRAVEL_CONCESSION": {
       "OFFERING": "Offering",
