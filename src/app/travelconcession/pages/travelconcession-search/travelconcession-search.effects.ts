@@ -279,7 +279,11 @@ export class TravelconcessionSearchEffects {
       concatLatestFrom(() => this.store.select(selectSearchCriteria)),
       switchMap(([, searchCriteria]) =>
         this.travelconcessionService
-          .searchTravelConcession(searchCriteria)
+          .searchTravelConcession({
+            ...searchCriteria,
+            // Temporary workaround until pagination can be implemented
+            pageSize: 1000 * 1000,
+          })
           .pipe(
             map(({ stream, totalElements }) =>
               TravelconcessionSearchActions.travelconcessionSearchResultsReceived(
