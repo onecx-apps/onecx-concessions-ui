@@ -270,27 +270,29 @@ export class TravelofferingSearchEffects {
       ),
       concatLatestFrom(() => this.store.select(selectSearchCriteria)),
       switchMap(([, searchCriteria]) =>
-        this.travelofferingService.searchTravelOfferings({
-          ...searchCriteria,
-          // Temporary workaround until pagination can be implemented
-          pageSize: 1000*1000
-        }).pipe(
-          map(({ stream, totalElements }) =>
-            TravelofferingSearchActions.travelofferingSearchResultsReceived({
-              results: stream ?? [],
-              totalNumberOfResults: totalElements ?? 0,
-            })
-          ),
-          catchError((error) =>
-            of(
-              TravelofferingSearchActions.travelofferingSearchResultsLoadingFailed(
-                {
-                  error,
-                }
+        this.travelofferingService
+          .searchTravelOfferings({
+            ...searchCriteria,
+            // Temporary workaround until pagination can be implemented
+            pageSize: 1000 * 1000,
+          })
+          .pipe(
+            map(({ stream, totalElements }) =>
+              TravelofferingSearchActions.travelofferingSearchResultsReceived({
+                results: stream ?? [],
+                totalNumberOfResults: totalElements ?? 0,
+              })
+            ),
+            catchError((error) =>
+              of(
+                TravelofferingSearchActions.travelofferingSearchResultsLoadingFailed(
+                  {
+                    error,
+                  }
+                )
               )
             )
           )
-        )
       )
     );
   });
