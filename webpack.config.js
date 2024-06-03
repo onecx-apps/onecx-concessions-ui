@@ -6,7 +6,7 @@ const config = withModuleFederationPlugin({
   name: 'onecx-concessions-ui',
   filename: 'remoteEntry.js',
   exposes: {
-    './OnecxconcessionsUiModule':
+    './OneCXConcessionsModule':
       './src/app/onecx-concessions-ui.remote.module.ts',
   },
   shared: share({
