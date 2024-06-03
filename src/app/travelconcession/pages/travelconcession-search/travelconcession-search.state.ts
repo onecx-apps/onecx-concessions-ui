@@ -15,9 +15,10 @@ export interface TravelconcessionSearchState {
   viewMode: 'basic' | 'advanced';
   chartVisible: boolean;
   searchConfigEnabled: boolean;
-  changeMode: 'NEW' | 'EDIT',
-  displayDetailDialog: boolean,
-  dataItem: TravelConcession | undefined,
+  changeMode: 'NEW' | 'EDIT';
+  displayDetailDialog: boolean;
+  dataItem: TravelConcession | undefined;
+  totalNumberOfResults: number;
 }
 
 export interface TravelconcessionSearchConfigState {
@@ -28,7 +29,8 @@ export interface TravelconcessionSearchConfigState {
   viewMode: 'basic' | 'advanced';
   searchCriteria: TravelconcessionSearchCriteria;
   searchConfigEnabled: boolean;
-  changeMode: 'NEW' | 'EDIT',
-  displayDetailDialog: boolean,
-  dataItem: TravelConcession | undefined,
+  changeMode: 'NEW' | 'EDIT';
+  displayDetailDialog: boolean;
+  dataItem: TravelConcession | undefined;
+  totalNumberOfResults: number;
 }
