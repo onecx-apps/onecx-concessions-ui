@@ -12,6 +12,7 @@ export interface TravelofferingSearchViewModel {
   columns: DataTableColumn[];
   searchCriteria: TravelofferingSearchCriteria;
   results: RowListGridData[];
+  totalNumberOfResults: number;
   searchConfigs: SearchConfigInfo[];
   selectedSearchConfig: SearchConfig | null;
   displayedColumns: DataTableColumn[];

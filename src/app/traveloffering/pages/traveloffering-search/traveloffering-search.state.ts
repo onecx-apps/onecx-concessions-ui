@@ -19,6 +19,7 @@ export interface TravelofferingSearchState {
   changeMode: 'NEW' | 'EDIT';
   displayDetailDialog: boolean;
   dataItem: TravelOffering | undefined;
+  totalNumberOfResults: number;
 }
 
 export interface TravelofferingSearchConfigState {
@@ -32,4 +33,5 @@ export interface TravelofferingSearchConfigState {
   changeMode: 'NEW' | 'EDIT';
   displayDetailDialog: boolean;
   dataItem: TravelOffering | undefined;
+  totalNumberOfResults: number;
 }

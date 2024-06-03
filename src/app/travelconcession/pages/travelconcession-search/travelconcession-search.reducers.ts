@@ -16,6 +16,7 @@ export const initialState: TravelconcessionSearchState = {
   changeMode: 'NEW',
   displayDetailDialog: false,
   dataItem: undefined,
+  totalNumberOfResults: 0,
 };
 
 export const travelconcessionSearchReducer = createReducer(
@@ -32,10 +33,11 @@ export const travelconcessionSearchReducer = createReducer(
     TravelconcessionSearchActions.travelconcessionSearchResultsReceived,
     (
       state: TravelconcessionSearchState,
-      { results }
+      { results, totalNumberOfResults }
     ): TravelconcessionSearchState => ({
       ...state,
       results,
+      totalNumberOfResults,
     })
   ),
   on(

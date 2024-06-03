@@ -282,7 +282,7 @@ export class TravelconcessionSearchEffects {
           .searchTravelConcession({
             ...searchCriteria,
             // Temporary workaround until pagination can be implemented
-            pageSize: 1000 * 1000,
+            pageSize: 2000,
           })
           .pipe(
             map(({ stream, totalElements }) =>

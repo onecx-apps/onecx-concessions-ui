@@ -74,4 +74,4 @@ effectProvidersForWorkaround.forEach((p) => (p.ɵprov.providedIn = null));
     },
   ],
 })
-export class OnecxconcessionsUiModule {}
+export class OneCXConcessionsModule {}

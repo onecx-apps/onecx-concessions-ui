@@ -65,6 +65,7 @@ export const selectTravelofferingSearchViewModel = createSelector(
   travelofferingSearchSelectors.selectChangeMode,
   travelofferingSearchSelectors.selectDisplayDetailDialog,
   travelofferingSearchSelectors.selectDataItem,
+  travelofferingSearchSelectors.selectTotalNumberOfResults,
   (
     columns,
     searchCriteria,
@@ -77,7 +78,8 @@ export const selectTravelofferingSearchViewModel = createSelector(
     searchConfigEnabled,
     changeMode,
     displayDetailDialog,
-    dataItem
+    dataItem,
+    totalNumberOfResults
   ): TravelofferingSearchViewModel => ({
     columns,
     searchCriteria,
@@ -91,6 +93,7 @@ export const selectTravelofferingSearchViewModel = createSelector(
     changeMode,
     displayDetailDialog,
     dataItem,
+    totalNumberOfResults,
   })
 );
 
@@ -105,6 +108,7 @@ export const selectSearchConfigViewState = createSelector(
   travelofferingSearchSelectors.selectChangeMode,
   travelofferingSearchSelectors.selectDisplayDetailDialog,
   travelofferingSearchSelectors.selectDataItem,
+  travelofferingSearchSelectors.selectTotalNumberOfResults,
   (
     columns,
     searchConfigs,
@@ -115,7 +119,8 @@ export const selectSearchConfigViewState = createSelector(
     searchConfigEnabled,
     changeMode,
     displayDetailDialog,
-    dataItem
+    dataItem,
+    totalNumberOfResults
   ): TravelofferingSearchConfigState => ({
     columns,
     searchConfigs,
@@ -127,5 +132,6 @@ export const selectSearchConfigViewState = createSelector(
     changeMode,
     displayDetailDialog,
     dataItem,
+    totalNumberOfResults,
   })
 );
