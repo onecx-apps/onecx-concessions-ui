@@ -242,8 +242,7 @@ export class TravelconcessionSearchEffects {
         this.store.select(travelconcessionSearchSelectors.selectResults)
       ),
       map(([action, results]) => {
-        const dataItem = results.filter((item) => item.id == action.id)[0];
-        console.table(dataItem);
+        const dataItem = results.filter((item) => item.id == action.id)[0];        
         return TravelconcessionSearchActions.dataItemSet({
           dataItem,
         });
