@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { isDevMode, NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { APP_INITIALIZER, DoBootstrap, Injector, isDevMode, NgModule } from '@angular/core';
+import { Router, RouterModule, Routes } from '@angular/router';
 import {
   Actions,
   EffectsModule,
@@ -16,30 +16,59 @@ import {
   TranslateModule,
 } from '@ngx-translate/core';
 import {
-  addInitializeModuleGuard,
   AppStateService,
   ConfigurationService,
   createTranslateLoader,
   PortalCoreModule,
   PortalMissingTranslationHandler,
+  providePortalDialogService,
 } from '@onecx/portal-integration-angular';
-import { routes } from './app-routing.module';
 import { commonImports } from './app.module';
 import { metaReducers, reducers } from './app.reducers';
 import { Configuration } from './shared/generated';
 import { SharedModule } from './shared/shared.module';
 import { apiConfigProvider } from './shared/utils/apiConfigProvider.utils';
+import { AppEntrypointComponent } from './app-entrypoint.component';
+import { createAppEntrypoint, initializeRouter, startsWith } from '@onecx/angular-webcomponents';
+import { addInitializeModuleGuard } from '@onecx/angular-integration-interface';
+import { BrowserModule } from '@angular/platform-browser';
+import { DialogModule } from 'primeng/dialog';
 
 // Workaround for the following issue:
 // https://github.com/ngrx/platform/issues/3700
 const effectProvidersForWorkaround = [EffectsRunner, EffectSources, Actions];
 effectProvidersForWorkaround.forEach((p) => (p.ɵprov.providedIn = null));
 
+const routes: Routes = [
+  {
+    matcher: startsWith('travelconcession'),
+    loadChildren: () =>
+      import('./travelconcession/travelconcession.module').then(
+        (mod) => mod.TravelconcessionModule
+      ),
+  },
+  {
+    matcher: startsWith('traveloffering'),
+    loadChildren: () =>
+      import('./traveloffering/traveloffering.module').then(
+        (m) => m.TravelOfferingModule
+      ),
+  },
+  {
+    matcher: startsWith(''),
+    redirectTo: 'traveloffering',
+    pathMatch: 'full',
+  },
+];
+
 @NgModule({
   imports: [
+    BrowserModule,
     ...commonImports,
+    DialogModule,
+    HttpClientModule,
     PortalCoreModule.forMicroFrontend(),
-    RouterModule.forChild(addInitializeModuleGuard(routes)),
+    RouterModule.forRoot(addInitializeModuleGuard(routes)),
     TranslateModule.forRoot({
       extend: true,
       isolate: false,
@@ -72,6 +101,22 @@ effectProvidersForWorkaround.forEach((p) => (p.ɵprov.providedIn = null));
       useFactory: apiConfigProvider,
       deps: [ConfigurationService, AppStateService],
     },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeRouter,
+      multi: true,
+      deps: [Router, AppStateService]
+    },
+    providePortalDialogService()
+  ],
+  declarations: [
+    AppEntrypointComponent
   ],
 })
-export class OneCXConcessionsModule {}
+export class OneCXConcessionsModule implements DoBootstrap {
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap(): void {
+    createAppEntrypoint(AppEntrypointComponent, 'onecx-concessions-ui-entrypoint', this.injector)
+  }
+}

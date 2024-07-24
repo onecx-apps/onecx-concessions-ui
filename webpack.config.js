@@ -7,7 +7,7 @@ const config = withModuleFederationPlugin({
   filename: 'remoteEntry.js',
   exposes: {
     './OneCXConcessionsModule':
-      './src/app/onecx-concessions-ui.remote.module.ts',
+      './src/bootstrap.ts',
   },
   shared: share({
     '@angular/core': {
@@ -55,4 +55,18 @@ const config = withModuleFederationPlugin({
   sharedMappings: ['@onecx/portal-integration-angular'],
 });
 
-module.exports = config;
+module.exports = {
+  ...config,
+  output: {
+    uniqueName: 'onecx-concessions-ui',
+    publicPath: 'auto'
+  },
+  experiments: {
+    ...config.experiments,
+    topLevelAwait: true
+  },
+  optimization: {
+    runtimeChunk: false,
+    splitChunks: false
+  }
+};
