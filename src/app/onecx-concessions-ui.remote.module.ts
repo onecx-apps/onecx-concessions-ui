@@ -32,7 +32,8 @@ import { AppEntrypointComponent } from './app-entrypoint.component';
 import { createAppEntrypoint, initializeRouter, startsWith } from '@onecx/angular-webcomponents';
 import { addInitializeModuleGuard } from '@onecx/angular-integration-interface';
 import { BrowserModule } from '@angular/platform-browser';
-import { DialogModule } from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularAuthModule } from '@onecx/angular-auth';
 
 // Workaround for the following issue:
 // https://github.com/ngrx/platform/issues/3700
@@ -63,9 +64,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    AngularAuthModule,
+    BrowserAnimationsModule,
     BrowserModule,
     ...commonImports,
-    DialogModule,
     HttpClientModule,
     PortalCoreModule.forMicroFrontend(),
     RouterModule.forRoot(addInitializeModuleGuard(routes)),
