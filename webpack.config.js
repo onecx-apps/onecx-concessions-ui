@@ -7,7 +7,7 @@ const config = withModuleFederationPlugin({
   filename: 'remoteEntry.js',
   exposes: {
     './OneCXConcessionsModule':
-      './src/app/onecx-concessions-ui.remote.module.ts',
+      './src/bootstrap.ts',
   },
   shared: share({
     '@angular/core': {
@@ -37,6 +37,18 @@ const config = withModuleFederationPlugin({
       requiredVersion: 'auto',
       includeSecondaries: true,
     },
+    '@onecx/accelerator': {
+      requiredVersion: 'auto',
+      includeSecondaries: true,
+    },
+    '@onecx/angular-integration-interface': {
+      requiredVersion: 'auto',
+      includeSecondaries: true,
+    },
+    '@onecx/angular-webcomponents': {
+      requiredVersion: 'auto',
+      includeSecondaries: true,
+    },
     '@onecx/portal-integration-angular': {
       requiredVersion: 'auto',
       includeSecondaries: true,
@@ -45,8 +57,11 @@ const config = withModuleFederationPlugin({
       requiredVersion: 'auto',
       includeSecondaries: true,
     },
+    '@onecx/portal-layout-styles': {
+      requiredVersion: 'auto',
+      includeSecondaries: true,
+    },
     '@ngx-translate/core': {
-      singleton: true,
       strictVersion: false,
       requiredVersion: '^14.0.0',
     },
@@ -55,4 +70,18 @@ const config = withModuleFederationPlugin({
   sharedMappings: ['@onecx/portal-integration-angular'],
 });
 
-module.exports = config;
+module.exports = {
+  ...config,
+  output: {
+    uniqueName: 'onecx-concessions-ui',
+    publicPath: 'auto'
+  },
+  experiments: {
+    ...config.experiments,
+    topLevelAwait: true
+  },
+  optimization: {
+    runtimeChunk: false,
+    splitChunks: false
+  }
+};

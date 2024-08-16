@@ -14,6 +14,9 @@ app:
           description: "OneCX OnecxconcessionsUi Module"
           note: "OneCX OnecxconcessionsUi UI module auto import via MF operator"
           type: MODULE
+          technology: WEBCOMPONENTMODULE
+          remoteName: onecx-concessions-ui
+          tagName: onecx-concessions-ui-entrypoint
     permission:
       enabled: true
       spec:
